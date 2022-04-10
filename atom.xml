@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>shiftrain&#39;s blog</title>
+  
+  
+  <link href="https://shiftrain.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://shiftrain.github.io/"/>
+  <updated>2022-04-10T17:50:38.911Z</updated>
+  <id>https://shiftrain.github.io/</id>
+  
+  <author>
+    <name>shiftrain</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搜索</title>
+    <link href="https://shiftrain.github.io/2022/04/08/leetcode/sou-suo/"/>
+    <id>https://shiftrain.github.io/2022/04/08/leetcode/sou-suo/</id>
+    <published>2022-04-08T02:24:00.000Z</published>
+    <updated>2022-04-10T17:50:38.911Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;127-单词接龙&quot;&gt;&lt;a href=&quot;#127-单词接龙&quot; class=&quot;headerlink&quot; title=&quot;127. 单词接龙&quot;&gt;&lt;/a&gt;127. 单词接龙&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="DFS" scheme="https://shiftrain.github.io/tags/DFS/"/>
+    
+    <category term="BFS" scheme="https://shiftrain.github.io/tags/BFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>345. 反转字符串中的元音字母</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/345.fan-zhuan-zi-fu-chuan-zhong-de-yuan-yin-zi-mu/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/345.fan-zhuan-zi-fu-chuan-zhong-de-yuan-yin-zi-mu/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:31:10.673Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="双指针" scheme="https://shiftrain.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>763. 划分字母区间</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/763.hua-fen-zi-mu-qu-jian/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/763.hua-fen-zi-mu-qu-jian/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:27:59.350Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="动态规划" scheme="https://shiftrain.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>153. 寻找旋转排序数组中的最小值</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/153.xun-zhao-xuan-zhuan-pai-xu-shu-zu-zhong-de-zui-xiao-zhi/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/153.xun-zhao-xuan-zhuan-pai-xu-shu-zu-zhong-de-zui-xiao-zhi/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:29:30.812Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="二分查找" scheme="https://shiftrain.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>665. 非递减数列</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/665.fei-di-jian-shu-lie/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/665.fei-di-jian-shu-lie/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:26:53.516Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="动态规划" scheme="https://shiftrain.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/tags/leetcode/"/>
+    
+    <category term="python3" scheme="https://shiftrain.github.io/tags/python3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>34. 在排序数组中查找元素的第一个和最后一个位置</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/34.zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-yi-ge-he-zui-hou-yi-ge-wei-zhi/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/34.zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-yi-ge-he-zui-hou-yi-ge-wei-zhi/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:29:18.565Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="二分查找" scheme="https://shiftrain.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>69. x 的平方根</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/69.x-de-ping-fang-gen/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/69.x-de-ping-fang-gen/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:29:27.320Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="二分查找" scheme="https://shiftrain.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>540. 有序数组中的单一元素</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/540.you-xu-shu-zu-zhong-de-dan-yi-yuan-su/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/540.you-xu-shu-zu-zhong-de-dan-yi-yuan-su/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:29:34.955Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="二分查找" scheme="https://shiftrain.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>215. 数组中的第K个最大元素</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/pai-xu/215.shu-zu-zhong-de-di-k-ge-zui-da-yuan-su/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/pai-xu/215.shu-zu-zhong-de-di-k-ge-zui-da-yuan-su/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:30:47.974Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="排序" scheme="https://shiftrain.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>279. 完全平方数</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/dong-tai-gui-hua/279.wan-quan-ping-fang-shu/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/dong-tai-gui-hua/279.wan-quan-ping-fang-shu/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:28:34.101Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="动态规划" scheme="https://shiftrain.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>241. 为运算表达式设计优先级</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/fen-zhi-fa/241.wei-yun-suan-biao-da-shi-she-ji-you-xian-ji/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/fen-zhi-fa/241.wei-yun-suan-biao-da-shi-she-ji-you-xian-ji/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:30:07.403Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="分治法" scheme="https://shiftrain.github.io/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>167. 两数之和 II - 输入有序数组</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/167.liang-shu-zhi-he-ii-shu-ru-you-xu-shu-zu/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/167.liang-shu-zhi-he-ii-shu-ru-you-xu-shu-zu/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:31:05.821Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="双指针" scheme="https://shiftrain.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>95. 不同的二叉搜索树 II</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/fen-zhi-fa/95.bu-tong-de-er-cha-sou-suo-shu-ii/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/fen-zhi-fa/95.bu-tong-de-er-cha-sou-suo-shu-ii/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:29:56.311Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="分治法" scheme="https://shiftrain.github.io/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>417. 太平洋大西洋水流问题</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/sou-suo/417.tai-ping-yang-da-xi-yang-shui-liu-wen-ti/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/sou-suo/417.tai-ping-yang-da-xi-yang-shui-liu-wen-ti/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:33:59.797Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="DFS" scheme="https://shiftrain.github.io/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>524. 通过删除字母匹配到字典里最长单词</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:31:14.558Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="双指针" scheme="https://shiftrain.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>633. 平方数之和</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/633.ping-fang-shu-zhi-he/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/633.ping-fang-shu-zhi-he/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:31:17.182Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="双指针" scheme="https://shiftrain.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>121. 买卖股票的最佳时机</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/121.mai-mai-gu-piao-de-zui-jia-shi-ji/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/121.mai-mai-gu-piao-de-zui-jia-shi-ji/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:26:03.324Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="动态规划" scheme="https://shiftrain.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/tags/leetcode/"/>
+    
+    <category term="python3" scheme="https://shiftrain.github.io/tags/python3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>122. 买卖股票的最佳时机 II</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/122.mai-mai-gu-piao-de-zui-jia-shi-ji-ii/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/122.mai-mai-gu-piao-de-zui-jia-shi-ji-ii/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:26:10.233Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="动态规划" scheme="https://shiftrain.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/tags/leetcode/"/>
+    
+    <category term="python3" scheme="https://shiftrain.github.io/tags/python3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>406. 根据身高重建队列</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/406.gen-ju-shen-gao-chong-jian-dui-lie/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/tan-xin-si-xiang/406.gen-ju-shen-gao-chong-jian-dui-lie/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:26:14.950Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="刷题" scheme="https://shiftrain.github.io/categories/%E5%88%B7%E9%A2%98/"/>
+    
+    
+    <category term="搜索" scheme="https://shiftrain.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="动态规划" scheme="https://shiftrain.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/tags/leetcode/"/>
+    
+    <category term="python3" scheme="https://shiftrain.github.io/tags/python3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>680. 验证回文字符串 Ⅱ</title>
+    <link href="https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/680.yan-zheng-hui-wen-zi-fu-chuan-ii/"/>
+    <id>https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/680.yan-zheng-hui-wen-zi-fu-chuan-ii/</id>
+    <published>2022-04-01T02:24:00.000Z</published>
+    <updated>2022-04-07T15:31:19.715Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;222&quot;&gt;&lt;a href=&quot;#222&quot; class=&quot;headerlink&quot; title=&quot;222&quot;&gt;&lt;/a&gt;222&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="https://shiftrain.github.io/categories/leetcode/"/>
+    
+    
+    <category term="双指针" scheme="https://shiftrain.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+</feed>
