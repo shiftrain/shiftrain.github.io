@@ -118,7 +118,7 @@ a.gitment-header-issue-link:visited {
     color: #34495e !important;
 }
 
-.gitment-comments-pagination .gitment-comments-page-item {
+.gitment-comments-pagination .gitment-comments-page-item { 
     display: inline-block;
     cursor: pointer;
     margin: 4px 5px;

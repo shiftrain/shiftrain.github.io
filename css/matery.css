@@ -614,6 +614,7 @@ header .go-back i {
 .index-card {
     margin-top: -50px;
     padding-top: 20px;
+    margin-bottom: 500px;
 }
 
 .carousel-post .title {
@@ -793,7 +794,7 @@ header .go-back i {
 
 /*文章列表卡片各样式*/
 #articles {
-    margin-top: 10px;
+    margin-top: -490px;
     margin-bottom: 10px;
 }
 
@@ -2001,6 +2002,9 @@ img {
     margin-bottom: 0px;
 }
 
+.container .paging {
+    margin-bottom: 200px;
+}
 
 /*大屏幕下(桌面类)的样式*/
 @media only screen and (min-width: 1500px) {    
@@ -2008,3 +2012,11 @@ img {
         background-image: url('/medias/banner/0.jpg');
     }
 }
+
+/* .post_share {
+    zoom: 80%;
+    width: fit-content;
+    display: unset;
+    float: unset;
+    margin: -0.15rem 0;
+} */
