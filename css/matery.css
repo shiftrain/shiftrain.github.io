@@ -779,6 +779,7 @@ header .go-back i {
 }
 
 .archive-calendar {
+    /* margin-top: -620px; */
     margin-top: -520px;
     max-width: 820px;
 }
@@ -1078,7 +1079,7 @@ article .article-tags .chip {
 }
 
 #articleContent blockquote p {
-    text-indent: 0.2rem;
+    text-indent: 0.0rem;
 }
 
 #articleContent a {
@@ -1168,6 +1169,7 @@ table tr:nth-child(2n), thead {
 }
 
 .chip-container {
+    /* margin-top: -620px; */
     margin-top: -520px;
     margin-bottom: 20px;
 }
@@ -1476,8 +1478,9 @@ table tr:nth-child(2n), thead {
 .contact-container {
     width: 90%;
     max-width: 900px;
+    /* margin-top: -620px; */
     margin-top: -520px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1491,6 +1494,7 @@ table tr:nth-child(2n), thead {
 .about-container {
     width: 90%;
     max-width: 1225px;
+    /* margin-top: -620px; */
     margin-top: -520px;
     margin-bottom: 20px;
 }
@@ -1866,7 +1870,7 @@ footer .copy-right {
 }
 
 .img-margin {
-    margin: 25px auto 10px auto;
+    margin: 5px auto 5px auto;
 }
 
 .caption {
@@ -1963,6 +1967,7 @@ img {
 .container.friends-container {
     /* width: 90%;
     max-width: 900px; */
+    /* margin-top: -620px; */
     margin-top: -520px;
 }
 
@@ -1975,7 +1980,8 @@ img {
 }
 
 .container .row {
-    margin-bottom: 240px;
+    /* margin-bottom: 370px; */
+    margin-bottom: 333px;
 }
 
 .index-cover .row {
@@ -2006,6 +2012,10 @@ img {
     margin-bottom: 200px;
 }
 
+.container.paging .row {
+    margin-bottom: 00px;
+}
+
 /*大屏幕下(桌面类)的样式*/
 @media only screen and (min-width: 1500px) {    
     .bg-cover {
@@ -2020,3 +2030,4 @@ img {
     float: unset;
     margin: -0.15rem 0;
 } */
+
