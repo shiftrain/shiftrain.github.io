@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -484,7 +484,14 @@
        　<span class="token keyword">if</span> <span class="token operator">not</span> Visited<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">:</span>
             DFS<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h3><h4 id="1091-二进制矩阵中的最短路径"><a href="#1091-二进制矩阵中的最短路径" class="headerlink" title="1091. 二进制矩阵中的最短路径"></a>1091. 二进制矩阵中的最短路径</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">leetcode</a></p>
+<h3 id="3-回溯-Backtracking"><a href="#3-回溯-Backtracking" class="headerlink" title="3 回溯(Backtracking)"></a>3 回溯(Backtracking)</h3><h4 id="3-1-基本实现思想"><a href="#3-1-基本实现思想" class="headerlink" title="3.1 基本实现思想"></a>3.1 基本实现思想</h4><p>Backtracking（回溯）属于 DFS。</p>
+<ul>
+<li>普通 DFS 主要用在<code>可达性问题</code> ，这种问题只需要执行到特点的位置然后返回即可。</li>
+<li>而 Backtracking 主要用于求解<code>排列组合</code>问题，例如有 { ‘a’,’b’,’c’ } 三个字符，求解所有由这三个字符排列得到的字符串，这种问题在执行到特定的位置返回之后还会继续执行求解过程。<br>因为 Backtracking 不是立即返回，而要继续求解，因此在程序实现时，需要注意对元素的标记问题：</li>
+<li>在访问一个新元素进入新的递归调用时，需要将新元素标记为已经访问，这样才能在继续递归调用时不用重复访问该元素；</li>
+<li>但是在递归返回时，需要将元素标记为未访问，因为只需要保证在一个递归链中不同时访问一个元素，可以访问已经访问过但是不在当前递归链中的元素。</li>
+</ul>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><h4 id="1091-二进制矩阵中的最短路径"><a href="#1091-二进制矩阵中的最短路径" class="headerlink" title="1091. 二进制矩阵中的最短路径"></a>1091. 二进制矩阵中的最短路径</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <img src="/2022/04/08/leetcode/sou-suo/0.png" class="" title="题目例图">
 
@@ -492,7 +499,7 @@
 <blockquote>
 <p>输入：grid = [[0,1],[1,0]]<br>输出：2</p>
 </blockquote>
-<h4 id="普通BFS题解"><a href="#普通BFS题解" class="headerlink" title="普通BFS题解"></a>普通BFS题解</h4><p>思路就是BFS</p>
+<h5 id="普通BFS题解"><a href="#普通BFS题解" class="headerlink" title="普通BFS题解"></a>普通BFS题解</h5><p>思路就是BFS</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">shortestPathBinaryMatrix</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> grid<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         <span class="token keyword">if</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
@@ -520,7 +527,7 @@
             step <span class="token operator">+=</span> <span class="token number">1</span>
         <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="127-单词接龙"><a href="#127-单词接龙" class="headerlink" title="127. 单词接龙"></a>127. 单词接龙</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-ladder/description/">leetcode</a></p>
+<h4 id="127-单词接龙"><a href="#127-单词接龙" class="headerlink" title="127. 单词接龙"></a>127. 单词接龙</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-ladder/description/">leetcode</a></p>
 <p>难度: <code>困难</code></p>
 <p>这题其实思路还是比较简单的，找出最短路径，其实就是广度优先搜索BFS，只不过复杂度大了点，所以我们在使用BFS的时候会发现直接超时了，但这不是问题。<br>因为我们有python的set()</p>
 <ul>
@@ -533,7 +540,7 @@
 <blockquote>
 <p>输入：beginWord = “hit”, endWord = “cog”, wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出：5<br>解释：一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”, 返回它的长度 5。</p>
 </blockquote>
-<h4 id="普通BFS题解-1"><a href="#普通BFS题解-1" class="headerlink" title="普通BFS题解"></a>普通BFS题解</h4><p>思路如图所示。</p>
+<h5 id="普通BFS题解-1"><a href="#普通BFS题解-1" class="headerlink" title="普通BFS题解"></a>普通BFS题解</h5><p>思路如图所示。</p>
 <img src="/2022/04/08/leetcode/sou-suo/1.png" class="" title="普通BFS">
 
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
@@ -562,7 +569,7 @@
                         vis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="双向BFS题解"><a href="#双向BFS题解" class="headerlink" title="双向BFS题解"></a>双向BFS题解</h4><img src="/2022/04/08/leetcode/sou-suo/2.png" class="" title="普通BFS">
+<h5 id="双向BFS题解"><a href="#双向BFS题解" class="headerlink" title="双向BFS题解"></a>双向BFS题解</h5><img src="/2022/04/08/leetcode/sou-suo/2.png" class="" title="普通BFS">
 
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">ladderLength</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> beginWord<span class="token punctuation">:</span> str<span class="token punctuation">,</span> endWord<span class="token punctuation">:</span> str<span class="token punctuation">,</span> wordList<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
@@ -604,7 +611,7 @@
                             lvis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="695-岛屿的最大面积"><a href="#695-岛屿的最大面积" class="headerlink" title="695. 岛屿的最大面积"></a>695. 岛屿的最大面积</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-ladder/description/">leetcode</a></p>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><h4 id="695-岛屿的最大面积"><a href="#695-岛屿的最大面积" class="headerlink" title="695. 岛屿的最大面积"></a>695. 岛屿的最大面积</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-ladder/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <img src="/2022/04/08/leetcode/sou-suo/3.png" class="" title="题目例图">
 
@@ -612,7 +619,7 @@
 <blockquote>
 <p>输入：beginWord = “hit”, endWord = “cog”, wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出：5<br>解释：一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”, 返回它的长度 5。</p>
 </blockquote>
-<h4 id="普通DFS题解"><a href="#普通DFS题解" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h4><p>大概是这个样子！</p>
+<h5 id="普通DFS题解"><a href="#普通DFS题解" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>大概是这个样子！</p>
 <img src="/2022/04/08/leetcode/sou-suo/4.png" class="" title="题解例图">
 
 <p>遍历整个grid，对于遇到的每个<code>grid == 1</code>，都进行一次DFS，注意不需要回溯，因为访问过的就不能再次访问了。</p>
@@ -635,13 +642,13 @@
         <span class="token keyword">return</span> cnt
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>这里用了4个单独的dfs是为了&quot;优化&quot;哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！</code></p>
-<h3 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a>200. 岛屿数量</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-islands/description/">leetcode</a></p>
+<h4 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a>200. 岛屿数量</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-islands/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>这题也是典型的岛类问题，用DFS、BFS、并查集也都是可以做的。<br>DFSDFSDFS!!!</p>
 <blockquote>
 <p>输入：grid = [<br>  [“1”,”1”,”1”,”1”,”0”],<br>  [“1”,”1”,”0”,”1”,”0”],<br>  [“1”,”1”,”0”,”0”,”0”],<br>  [“0”,”0”,”0”,”0”,”0”]<br>]<br>输出：1</p>
 </blockquote>
-<h4 id="普通DFS题解-1"><a href="#普通DFS题解-1" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h4><p>这个更简单了!</p>
+<h5 id="普通DFS题解-1"><a href="#普通DFS题解-1" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>这个更简单了!</p>
 <img src="/2022/04/08/leetcode/sou-suo/5.gif" class="" title="题解例图">
 
 <p>遍历整个grid，对于遇到的每个<code>grid == 1</code>，都进行一次DFS，也是要注意不需要回溯，因为访问过的就不能再次访问了。</p>
@@ -666,14 +673,14 @@
                     cnt <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
         <span class="token keyword">return</span> cnt
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="130-被围绕的区域"><a href="#130-被围绕的区域" class="headerlink" title="130. 被围绕的区域"></a>130. 被围绕的区域</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/surrounded-regions/description/">leetcode</a></p>
+<h4 id="130-被围绕的区域"><a href="#130-被围绕的区域" class="headerlink" title="130. 被围绕的区域"></a>130. 被围绕的区域</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/surrounded-regions/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>我认为啊，这道题不难，但是有陷阱，它并不是说把非边界的<code>O</code>都换成<code>X</code>，而是强调与处在边界的<code>O</code>相连的<code>O</code>其实都是不可以变的。</p>
 <p>理解了这里，就简单多了。</p>
 <blockquote>
 <p>输入：board = [[“X”,”X”,”X”,”X”],[“X”,”O”,”O”,”X”],[“X”,”X”,”O”,”X”],[“X”,”O”,”X”,”X”]]<br>输出：[[“X”,”X”,”X”,”X”],[“X”,”X”,”X”,”X”],[“X”,”X”,”X”,”X”],[“X”,”O”,”X”,”X”]]<br>解释：被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</p>
 </blockquote>
-<h4 id="普通DFS题解-2"><a href="#普通DFS题解-2" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h4><p>具体思路是，把处在边界的<code>O</code>和与其相连的<code>O</code>先临时处理为<code>F</code>，然后进行遍历，遇到<code>O</code>就DFS，把所有的<code>O</code>都变成<code>X</code>。</p>
+<h5 id="普通DFS题解-2"><a href="#普通DFS题解-2" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>具体思路是，把处在边界的<code>O</code>和与其相连的<code>O</code>先临时处理为<code>F</code>，然后进行遍历，遇到<code>O</code>就DFS，把所有的<code>O</code>都变成<code>X</code>。</p>
 <p>最后别忘了把设为<code>F</code>的<code>O</code>重置回去。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">solve</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> board<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
@@ -704,85 +711,99 @@
                 <span class="token keyword">if</span> board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'F'</span><span class="token punctuation">:</span>
                     board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'O'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="417-太平洋大西洋水流问题"><a href="#417-太平洋大西洋水流问题" class="headerlink" title="417. 太平洋大西洋水流问题"></a>417. 太平洋大西洋水流问题</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pacific-atlantic-water-flow/description/">leetcode</a></p>
+<h4 id="417-太平洋大西洋水流问题"><a href="#417-太平洋大西洋水流问题" class="headerlink" title="417. 太平洋大西洋水流问题"></a>417. 太平洋大西洋水流问题</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pacific-atlantic-water-flow/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
-<h4 id="普通DFS题解-3"><a href="#普通DFS题解-3" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h4><p>具体思路是</p>
+<img src="/2022/04/08/leetcode/sou-suo/6.jpg" class="" title="题目例图">
+
+<p>这题从正面强行做出比较困难，至少我是失败了，需要考虑的问题实在是太多了。<br>逆向思考一下或许更好。</p>
+<blockquote>
+<p>输入: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]<br>输出: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]</p>
+</blockquote>
+<h5 id="普通DFS题解-3"><a href="#普通DFS题解-3" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>具体思路是分别从大西洋和太平洋开始，让水从低往高流。<br>从大西洋开始可以流到的所有地方都做一个标记，从太平洋开始可以流到的地方也做一个不同的标记，最后遍历整个小岛，两种标记都有的地方就是我们想要的地方。<br><code>note: 这里的流到指的是水往高处流！</code></p>
+<img src="/2022/04/08/leetcode/sou-suo/7.png" class="" title="题解示意图a">
+<img src="/2022/04/08/leetcode/sou-suo/8.png" class="" title="题解示意图b">
+
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>result_all <span class="token operator">=</span> None
-        <span class="token comment" spellcheck="true"># 分别表示上右下左</span>
-        self<span class="token punctuation">.</span>directs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        self<span class="token punctuation">.</span>m <span class="token operator">=</span> <span class="token number">0</span>
-        self<span class="token punctuation">.</span>n <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token comment" spellcheck="true"># 表示能流到太平洋</span>
-        self<span class="token punctuation">.</span>po <span class="token operator">=</span> None
-        <span class="token comment" spellcheck="true"># 表示能流到大西洋</span>
-        self<span class="token punctuation">.</span>ao <span class="token operator">=</span> None
-        self<span class="token punctuation">.</span>visited <span class="token operator">=</span> None
-    
-    
-    <span class="token keyword">def</span> <span class="token function">pacificAtlantic</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span> <span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 初始化一些东西</span>
-        self<span class="token punctuation">.</span>result_all <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        self<span class="token punctuation">.</span>m <span class="token operator">=</span> len<span class="token punctuation">(</span>matrix<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>m <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> self<span class="token punctuation">.</span>result_all
-        self<span class="token punctuation">.</span>n <span class="token operator">=</span> len<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>ao <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>n <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
-        self<span class="token punctuation">.</span>po <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>n <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
-        self<span class="token punctuation">.</span>visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>n <span class="token keyword">for</span> _  <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">pacificAtlantic</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> heights<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        n <span class="token operator">=</span> len<span class="token punctuation">(</span>heights<span class="token punctuation">)</span>
+        m <span class="token operator">=</span> len<span class="token punctuation">(</span>heights<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        ao <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        po <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> x <span class="token operator">&lt;=</span> n<span class="token number">-1</span> <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> y <span class="token operator">&lt;=</span> m<span class="token number">-1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
 
-        <span class="token comment" spellcheck="true"># 本题顺着流不太好做，我们用逆流的方式来思考</span>
-        <span class="token comment" spellcheck="true"># 从上面的太平洋逆流</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>dfs<span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 从左边的太平洋逆流</span>
-        self<span class="token punctuation">.</span>visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>n <span class="token keyword">for</span> _  <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>dfs<span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 下面的大西洋</span>
-        self<span class="token punctuation">.</span>visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>n <span class="token keyword">for</span> _  <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>dfs<span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 右边的大西洋</span>
-        self<span class="token punctuation">.</span>visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>n <span class="token keyword">for</span> _  <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>n <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>dfs<span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
-        
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> self<span class="token punctuation">.</span>po<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> self<span class="token punctuation">.</span>ao<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
-                    self<span class="token punctuation">.</span>result_all<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>result_all
-
-    <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> matrix<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>visited<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>heights<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> visited<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span>
+            visited<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> flag <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                ao<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                po<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">for</span> nx<span class="token punctuation">,</span> ny <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token number">-1</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token operator">not</span> isValid<span class="token punctuation">(</span>nx<span class="token punctuation">,</span> ny<span class="token punctuation">)</span> <span class="token operator">or</span> heights<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">&lt;</span> heights<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    <span class="token keyword">continue</span>
+                dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> nx<span class="token punctuation">,</span> ny<span class="token punctuation">,</span> flag<span class="token punctuation">)</span>
             <span class="token keyword">return</span>
-        self<span class="token punctuation">.</span>visited<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
-        <span class="token keyword">if</span> flag<span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 表示是太平洋</span>
-            self<span class="token punctuation">.</span>po<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 表示是大西洋</span>
-            self<span class="token punctuation">.</span>ao<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
 
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            newx <span class="token operator">=</span> x <span class="token operator">+</span> self<span class="token punctuation">.</span>directs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-            newy <span class="token operator">=</span> y <span class="token operator">+</span> self<span class="token punctuation">.</span>directs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> self<span class="token punctuation">.</span>in_area<span class="token punctuation">(</span>newx<span class="token punctuation">,</span> newy<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">continue</span>
-            <span class="token keyword">if</span> matrix<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">></span> matrix<span class="token punctuation">[</span>newx<span class="token punctuation">]</span><span class="token punctuation">[</span>newy<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token keyword">continue</span>
-            self<span class="token punctuation">.</span>dfs<span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> newx<span class="token punctuation">,</span> newy<span class="token punctuation">,</span> flag<span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-    
-    <span class="token keyword">def</span> <span class="token function">in_area</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> x <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>m <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> y <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>n
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+
+        visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> x<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> po<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> ao<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h3><h4 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17. 电话号码的字母组合"></a>17. 电话号码的字母组合</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+
+
+<p>这题是典型的排列组合问题，递归+回溯！</p>
+<blockquote>
+<p>输入：digits = “23”<br>输出：[“ad”,”ae”,”af”,”bd”,”be”,”bf”,”cd”,”ce”,”cf”]</p>
+</blockquote>
+<h5 id="普通DFS题解-4"><a href="#普通DFS题解-4" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>具体思路略，这里可以把list()当栈用。</p>
+<img src="/2022/04/08/leetcode/sou-suo/10.png" class="" title="题解示意图a">
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> digits <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        phone <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'2':['a','b','c'],</span>
+                 <span class="token string">'3'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'4'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'5'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'j'</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token string">'l'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'6'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">'n'</span><span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'7'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token string">'q'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span><span class="token string">'s'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'8'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'t'</span><span class="token punctuation">,</span><span class="token string">'u'</span><span class="token punctuation">,</span><span class="token string">'v'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'9'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'w'</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token string">'y'</span><span class="token punctuation">,</span><span class="token string">'z'</span><span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res_all <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> step <span class="token operator">==</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                res_all<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> ch <span class="token keyword">in</span> phone<span class="token punctuation">[</span>digits<span class="token punctuation">[</span>step<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
+                dfs<span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                res<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res_all
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1255,7 +1276,7 @@
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
+            headingsOffset: -($(window).height() * 0.4 - 64),
             collapseDepth: Number('0'),
             headingSelector: 'h2, h3, h4'
         });
@@ -1339,7 +1360,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.8k</span>&nbsp;字
+                class="white-color">39.2k</span>&nbsp;字
             
 
             <br>
