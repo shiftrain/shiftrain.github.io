@@ -388,16 +388,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%90%9C%E7%B4%A2/">
-                                <span class="chip bg-color">搜索</span>
-                            </a>
-                        
                             <a href="/tags/DFS/">
                                 <span class="chip bg-color">DFS</span>
                             </a>
                         
                             <a href="/tags/BFS/">
                                 <span class="chip bg-color">BFS</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                                <span class="chip bg-color">搜索</span>
                             </a>
                         
                     </div>
@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    14 分
                 </div>
                 
 
@@ -775,8 +775,8 @@
 <blockquote>
 <p>输入：digits = “23”<br>输出：[“ad”,”ae”,”af”,”bd”,”be”,”bf”,”cd”,”ce”,”cf”]</p>
 </blockquote>
-<h5 id="普通DFS题解-4"><a href="#普通DFS题解-4" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>具体思路略，这里可以把list()当栈用。</p>
-<img src="/2022/04/08/leetcode/sou-suo/10.png" class="" title="题解示意图a">
+<h5 id="回溯DFS题解"><a href="#回溯DFS题解" class="headerlink" title="回溯DFS题解"></a>回溯DFS题解</h5><p>具体思路略，这里可以把list()当栈用。</p>
+<img src="/2022/04/08/leetcode/sou-suo/10.png" class="" title="题解示意图">
 
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">:</span>
@@ -804,6 +804,64 @@
         dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> res_all
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="46-全排列"><a href="#46-全排列" class="headerlink" title="46. 全排列"></a>46. 全排列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>这题和上一题基本一样，是典型的排列组合问题，递归+回溯！</p>
+<blockquote>
+<p>输入：nums = [1,2,3]<br>输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
+</blockquote>
+<h5 id="回溯DFS题解-1"><a href="#回溯DFS题解-1" class="headerlink" title="回溯DFS题解"></a>回溯DFS题解</h5><p>具体思路略，这里可以把list()当栈用，用set()是为了加速执行<code>if num not in vis:</code>，这是确保每一层递归不会出现重复的数字。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">permute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        vis <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> step <span class="token operator">==</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> num <span class="token operator">not</span> <span class="token keyword">in</span> vis<span class="token punctuation">:</span>
+                    tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+                    vis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+                    dfs<span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                    tmp<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    vis<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="77-组合"><a href="#77-组合" class="headerlink" title="77. 组合"></a>77. 组合</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combinations/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>需要进行一定优化的回溯问题。</p>
+<blockquote>
+<p>输入：n = 4, k = 2<br>输出：<br>[<br>  [2,4],<br>  [3,4],<br>  [2,3],<br>  [1,2],<br>  [1,3],<br>  [1,4],<br>]</p>
+</blockquote>
+<h5 id="回溯DFS题解-2"><a href="#回溯DFS题解-2" class="headerlink" title="回溯DFS题解"></a>回溯DFS题解</h5><p>优化过程：</p>
+<ol>
+<li>已经选择的元素个数：step;</li>
+<li>还需要的元素个数为: k - step;</li>
+<li>在集合n中至多要从该起始位置 : n - (k - step) + 1，开始遍历<br>注：还需要定义一个开始的坐标nn记录上一层递归所用的数</li>
+</ol>
+<img src="/2022/04/08/leetcode/sou-suo/11.png" class="" title="普通回溯">
+<img src="/2022/04/08/leetcode/sou-suo/12.png" class="" title="优化回溯">
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">combine</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">,</span> k<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token punctuation">,</span> nn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> step <span class="token operator">==</span> k<span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> num <span class="token keyword">in</span> range<span class="token punctuation">(</span>nn <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token punctuation">(</span>k <span class="token operator">-</span> step<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token operator">//</span>剪枝优化
+                tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+                dfs<span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+                tmp<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -815,16 +873,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%90%9C%E7%B4%A2/">
-                                    <span class="chip bg-color">搜索</span>
-                                </a>
-                            
                                 <a href="/tags/DFS/">
                                     <span class="chip bg-color">DFS</span>
                                 </a>
                             
                                 <a href="/tags/BFS/">
                                     <span class="chip bg-color">BFS</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                                    <span class="chip bg-color">搜索</span>
                                 </a>
                             
                         </div>
@@ -1116,16 +1174,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
-                        <span class="chip bg-color">搜索</span>
-                    </a>
-                    
                     <a href="/tags/DFS/">
                         <span class="chip bg-color">DFS</span>
                     </a>
                     
                     <a href="/tags/BFS/">
                         <span class="chip bg-color">BFS</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                        <span class="chip bg-color">搜索</span>
                     </a>
                     
                 </div>
@@ -1139,7 +1197,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/tan-xin-si-xiang/">
+                <a href="/2022/04/01/leetcode/tan-xin-si-xiang-fu-ben/">
                     <div class="card-image">
                         
                         
@@ -1173,16 +1231,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3/">
+                        <span class="chip bg-color">贪心思想</span>
+                    </a>
+                    
                     <a href="/tags/DFS/">
                         <span class="chip bg-color">DFS</span>
                     </a>
                     
                     <a href="/tags/BFS/">
                         <span class="chip bg-color">BFS</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3/">
-                        <span class="chip bg-color">贪心思想</span>
                     </a>
                     
                 </div>
@@ -1360,7 +1418,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">39.2k</span>&nbsp;字
+                class="white-color">39.6k</span>&nbsp;字
             
 
             <br>
