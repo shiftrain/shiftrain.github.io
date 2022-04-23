@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="540. 有序数组中的单一元素, ECNU BigData Key-Value Storage shiftrain">
+    <meta name="keywords" content="刷爆leetcode：动态规划, ECNU BigData Key-Value Storage shiftrain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>540. 有序数组中的单一元素 | shiftrain&#39;s blog</title>
+    <title>刷爆leetcode：动态规划 | shiftrain&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,7 +272,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">540. 有序数组中的单一元素</h1>
+                    <h1 class="description center-align post-title">刷爆leetcode：动态规划</h1>
                 </div>
             </div>
         </div>
@@ -388,8 +388,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
-                                <span class="chip bg-color">二分查找</span>
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
                             </a>
                         
                     </div>
@@ -400,8 +400,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%88%B7%E9%A2%98/" class="post-category">
-                                刷题
+                            <a href="/categories/leetcode/" class="post-category">
+                                leetcode
                             </a>
                         
                     </div>
@@ -413,7 +413,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-01
+                    2022-04-17
                 </div>
                 
 
@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1
+                    570
                 </div>
                 
 
@@ -450,7 +450,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="222"><a href="#222" class="headerlink" title="222"></a>222</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="1-动态规划-Dynamic-Programming"><a href="#1-动态规划-Dynamic-Programming" class="headerlink" title="1 动态规划(Dynamic Programming)"></a>1 动态规划(Dynamic Programming)</h3><h4 id="1-1-基本实现思想"><a href="#1-1-基本实现思想" class="headerlink" title="1.1 基本实现思想"></a>1.1 基本实现思想</h4><blockquote>
+<p>参考自：<a target="_blank" rel="noopener" href="https://labuladong.gitee.io/algo/1/4/">https://labuladong.gitee.io/algo/1/4/</a></p>
+</blockquote>
+<p><code>首先，动态规划问题的一般形式就是求最值</code>。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。</p>
+<p>既然是要求最值，核心问题是什么呢？<code>求解动态规划的核心问题是穷举</code>。因为要求最值，肯定要把所有可行的答案穷举出来，然后在其中找最值呗。</p>
+<p>动态规划这么简单，就是穷举就完事了？我看到的动态规划问题都很难啊！</p>
+<p>首先，动态规划的穷举有点特别，因为这类问题<code>存在「重叠子问题」</code>，如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免不必要的计算。</p>
+<p>而且，动态规划问题一定会<code>具备「最优子结构」</code>，才能通过子问题的最值得到原问题的最值。</p>
+<p>另外，虽然动态规划的核心思想就是穷举求最值，但是问题可以千变万化，穷举所有可行解其实并不是一件容易的事，只有列出<code>正确的「状态转移方程」</code>，才能正确地穷举。</p>
+<p>以上提到的重叠子问题、最优子结构、状态转移方程就是动态规划三要素。具体什么意思等会会举例详解，但是在实际的算法问题中，<code>写出状态转移方程是最困难的</code>，这也就是为什么很多朋友觉得动态规划问题困难的原因，我来提供我研究出来的一个思维框架，辅助你思考状态转移方程：</p>
+<p><code>明确 base case -&gt; 明确「状态」-&gt; 明确「选择」 -&gt; 定义 dp 数组/函数的含义。</code></p>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="1-斐波那契数列"><a href="#1-斐波那契数列" class="headerlink" title="1 斐波那契数列"></a>1 斐波那契数列</h3><h4 id="70-爬楼梯"><a href="#70-爬楼梯" class="headerlink" title="70. 爬楼梯"></a>70. 爬楼梯</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/description/">leetcode</a></p>
+<p>难度: <code>简单</code></p>
+<p>简单DP，开胃菜，不多说。</p>
+<blockquote>
+</blockquote>
+<p>输入：n = 2<br>输出：2<br>解释：有两种方法可以爬到楼顶。</p>
+<ol>
+<li>1 阶 + 1 阶</li>
+<li>2 阶</li>
+</ol>
+<h5 id="动态规划求解"><a href="#动态规划求解" class="headerlink" title="动态规划求解"></a>动态规划求解</h5><p>思路就是BFS</p>
+<pre class="line-numbers language-python"><code class="language-python">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -461,8 +485,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
-                                    <span class="chip bg-color">二分查找</span>
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
                                 </a>
                             
                         </div>
@@ -631,7 +655,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/540.you-xu-shu-zu-zhong-de-dan-yi-yuan-su/">https://shiftrain.github.io/2022/04/01/leetcode/er-fen-cha-zhao/540.you-xu-shu-zu-zhong-de-dan-yi-yuan-su/</a>
+                    <a href="https://shiftrain.github.io/2022/04/17/leetcode/dong-tai-gui-hua/">https://shiftrain.github.io/2022/04/17/leetcode/dong-tai-gui-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -688,7 +712,7 @@
         repo: 'shiftrain.github.io',
         owner: 'shiftrain',
         admin: ["shiftrain"],
-        id: '2022-04-01T10-24-00',
+        id: '2022-04-17T10-24-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -714,17 +738,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/er-fen-cha-zhao/153.xun-zhao-xuan-zhuan-pai-xu-shu-zu-zhong-de-zui-xiao-zhi/">
+                <a href="/2022/04/17/leetcode/dong-tai-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="153. 寻找旋转排序数组中的最小值">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="刷爆leetcode：动态规划">
                         
-                        <span class="card-title">153. 寻找旋转排序数组中的最小值</span>
+                        <span class="card-title">刷爆leetcode：动态规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -734,26 +759,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%88%B7%E9%A2%98/" class="post-category">
-                                    刷题
+                            <a href="/categories/leetcode/" class="post-category">
+                                    leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
-                        <span class="chip bg-color">二分查找</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -767,13 +793,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/shuang-zhi-zhen/167.liang-shu-zhi-he-ii-shu-ru-you-xu-shu-zu/">
+                <a href="/2022/04/08/leetcode/sou-suo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="167. 两数之和 II - 输入有序数组">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="刷爆leetcode：搜索">
                         
-                        <span class="card-title">167. 两数之和 II - 输入有序数组</span>
+                        <span class="card-title">刷爆leetcode：搜索</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -784,7 +810,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
                             </span>
                         <span class="publish-author">
                             
@@ -801,8 +827,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
+                    </a>
+                    
+                    <a href="/tags/BFS/">
+                        <span class="chip bg-color">BFS</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                        <span class="chip bg-color">搜索</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
                     </a>
                     
                 </div>

@@ -458,7 +458,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="1-贪心思想（greedy-algorithm）"><a href="#1-贪心思想（greedy-algorithm）" class="headerlink" title="1 贪心思想（greedy algorithm）"></a>1 贪心思想（greedy algorithm）</h3><h4 id="1-1-贪心算法的基本思路"><a href="#1-1-贪心算法的基本思路" class="headerlink" title="1.1 贪心算法的基本思路"></a>1.1 贪心算法的基本思路</h4><ul>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="1-贪心思想-greedy-algorithm"><a href="#1-贪心思想-greedy-algorithm" class="headerlink" title="1 贪心思想(greedy algorithm)"></a>1 贪心思想(greedy algorithm)</h3><h4 id="1-1-贪心算法的基本思路"><a href="#1-1-贪心算法的基本思路" class="headerlink" title="1.1 贪心算法的基本思路"></a>1.1 贪心算法的基本思路</h4><ul>
 <li><p>（1） 建立数学模型来描述问题。</p>
 </li>
 <li><p>（2） 把求解的问题分成若干个子问题。</p>
@@ -470,13 +470,13 @@
 </ul>
 <h4 id="1-2-贪心算法适用的问题"><a href="#1-2-贪心算法适用的问题" class="headerlink" title="1.2 贪心算法适用的问题"></a>1.2 贪心算法适用的问题</h4><p>贪心策略的前提是：<code>局部最优策略能导致产生全局最优解</code>。</p>
 <p>实际上，贪心算法使用的情况比较少，一般对一个问题分析是否适用于贪心算法，可以先选择该问题下的几个实际数据进行分析可以做出判断。</p>
-<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="455-分发饼干"><a href="#455-分发饼干" class="headerlink" title="455. 分发饼干"></a>455. 分发饼干</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/assign-cookies/description/">leetcode</a></p>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="1-常见贪心"><a href="#1-常见贪心" class="headerlink" title="1 常见贪心"></a>1 常见贪心</h3><h4 id="455-分发饼干"><a href="#455-分发饼干" class="headerlink" title="455. 分发饼干"></a>455. 分发饼干</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/assign-cookies/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
 <p>这题比较简单，也非常经典，可以作为学习贪心思想的开胃菜。</p>
 <blockquote>
 <p>输入: g = [1,2,3], s = [1,1]<br>输出: 1<br>解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。<br>虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。<br>所以你应该输出1。</p>
 </blockquote>
-<h4 id="贪心题解"><a href="#贪心题解" class="headerlink" title="贪心题解"></a>贪心题解</h4><ul>
+<h5 id="贪心题解"><a href="#贪心题解" class="headerlink" title="贪心题解"></a>贪心题解</h5><ul>
 <li>局部最优-&gt;全局最优</li>
 <li>局部最优：小尺寸饼干给胃口小的小孩</li>
 <li>全局最优：优先满足胃口小的小孩</li>
@@ -500,13 +500,13 @@
                 s_i <span class="token operator">+=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true">#g_i += 1</span>
         <span class="token keyword">return</span> sum
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="435-无重叠区间"><a href="#435-无重叠区间" class="headerlink" title="435. 无重叠区间"></a>435. 无重叠区间</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals/">leetcode</a></p>
+<h4 id="435-无重叠区间"><a href="#435-无重叠区间" class="headerlink" title="435. 无重叠区间"></a>435. 无重叠区间</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>难度升级的经典题，需要一定的思考。<br>如何<code>移除最少</code>的区间呢？<br>逆向思考一下：如何<code>保留最多</code>的区间呢？（<strong>移除数=总数-保留数</strong>）<br>是不是简单多了？</p>
 <blockquote>
 <p>输入: intervals = [[1,2],[2,3],[3,4],[1,3]]<br>输出: 1<br>解释: 移除 [1,3] 后，剩下的区间没有重叠。</p>
 </blockquote>
-<h4 id="贪心题解-1"><a href="#贪心题解-1" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如图所示：</p>
+<h5 id="贪心题解-1"><a href="#贪心题解-1" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如图所示：</p>
 <img src="/2022/04/01/leetcode/tan-xin-si-xiang/0.png" class="" title="思路图">
 
 <p>其实，这题就是<code>会议预定</code>类型的题，如果我们把本题的区间看成是会议，那么按照右端点排序，我们一定能够找到一个最先结束的会议。而这个会议一定是我们需要添加到最终结果的的首个会议。<br>所以我们要使用左区间排序（当然其实右区间也是可以的，不过就是从右往左遍历而已（md，为何多此一举））</p>
@@ -521,13 +521,13 @@
                  right <span class="token operator">=</span> L<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
         <span class="token keyword">return</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span> <span class="token operator">-</span> sum
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="452-用最少数量的箭引爆气球"><a href="#452-用最少数量的箭引爆气球" class="headerlink" title="452. 用最少数量的箭引爆气球"></a>452. 用最少数量的箭引爆气球</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/">leetcode</a></p>
+<h4 id="452-用最少数量的箭引爆气球"><a href="#452-用最少数量的箭引爆气球" class="headerlink" title="452. 用最少数量的箭引爆气球"></a>452. 用最少数量的箭引爆气球</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>这题的解法其实和上一题435不能说一模一样，只能说完全一致。</p>
 <blockquote>
 <p>输入：points = [[10,16],[2,8],[1,6],[7,12]]<br>输出：2<br>解释：气球可以用2支箭来爆破:<br>-在x = 6处射出箭，击破气球[2,8]和[1,6]。<br>-在x = 11处发射箭，击破气球[10,16]和[7,12]。</p>
 </blockquote>
-<h4 id="贪心题解-2"><a href="#贪心题解-2" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路略。</p>
+<h5 id="贪心题解-2"><a href="#贪心题解-2" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路略。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">findMinArrowShots</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> points<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         points<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span> <span class="token keyword">lambda</span> c<span class="token punctuation">:</span> <span class="token punctuation">(</span>c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>reverse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
@@ -539,14 +539,14 @@
                 sum <span class="token operator">+=</span> <span class="token number">1</span>
         <span class="token keyword">return</span> sum
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="406-根据身高重建队列"><a href="#406-根据身高重建队列" class="headerlink" title="406. 根据身高重建队列"></a>406. 根据身高重建队列</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/description/">leetcode</a></p>
+<h4 id="406-根据身高重建队列"><a href="#406-根据身高重建队列" class="headerlink" title="406. 根据身高重建队列"></a>406. 根据身高重建队列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>这题还是有一定思考难度的，看了题解才知道咋做的（其实我也忘了自己有没有看题解……）<br>反正是个脑筋急转弯。</p>
 <p>套路：一般这种数对，还涉及排序的，根据第一个元素正向排序，根据第二个元素反向排序，或者根据第一个元素反向排序，根据第二个元素正向排序，往往能够简化解题过程。</p>
 <blockquote>
 <p>输入：people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]<br>输出：[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]<br>解释：<br>编号为 0 的人身高为 5 ，没有身高更高或者相同的人排在他前面。<br>编号为 1 的人身高为 7 ，没有身高更高或者相同的人排在他前面。<br>编号为 2 的人身高为 5 ，有 2 个身高更高或者相同的人排在他前面，即编号为 0 和 1 的人。<br>编号为 3 的人身高为 6 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。<br>编号为 4 的人身高为 4 ，有 4 个身高更高或者相同的人排在他前面，即编号为 0、1、2、3 的人。<br>编号为 5 的人身高为 7 ，有 1 个身高更高或者相同的人排在他前面，即编号为 1 的人。<br>因此 [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] 是重新构造后的队</p>
 </blockquote>
-<h4 id="贪心题解-3"><a href="#贪心题解-3" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：</p>
+<h5 id="贪心题解-3"><a href="#贪心题解-3" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：</p>
 <p>假设有打乱顺序 意味着原始的数组满足排序</p>
 <ul>
 <li>第一个数字，第一优先级排序，由高到低，是为了用下标就能表示前面有几个元素比当前元素 大于等于</li>
@@ -561,13 +561,13 @@
             res<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>p<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121. 买卖股票的最佳时机"></a>121. 买卖股票的最佳时机</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/description/">leetcode</a></p>
+<h4 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121. 买卖股票的最佳时机"></a>121. 买卖股票的最佳时机</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
 <p>炒股？那必然贪心！别人恐惧我贪婪，别人贪婪我恐惧！<br>动态规划其实也算是贪心吧？！</p>
 <blockquote>
 <p>输入：[7,1,5,3,6,4]<br>输出：5<br>解释：在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。<br>     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。</p>
 </blockquote>
-<h4 id="贪心题解-4"><a href="#贪心题解-4" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：<br>总的老说，就是找到最低价和最高价（当然最低价要在最高价前面）。<br>所以我们要遍历所有节点，记录当前节点时我们可以得到的最大收益。<br>如何计算呢？</p>
+<h5 id="贪心题解-4"><a href="#贪心题解-4" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>总的老说，就是找到最低价和最高价（当然最低价要在最高价前面）。<br>所以我们要遍历所有节点，记录当前节点时我们可以得到的最大收益。<br>如何计算呢？</p>
 <ul>
 <li>当前最大收益 = max(已知最大收益, 当前价 - 前面已被记录的最低价)<br>over.</li>
 </ul>
@@ -585,14 +585,14 @@
                 res <span class="token operator">=</span> max<span class="token punctuation">(</span>res<span class="token punctuation">,</span>p<span class="token operator">-</span>mip<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="122-买卖股票的最佳时机-II"><a href="#122-买卖股票的最佳时机-II" class="headerlink" title="122. 买卖股票的最佳时机 II"></a>122. 买卖股票的最佳时机 II</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/">leetcode</a></p>
+<h4 id="122-买卖股票的最佳时机-II"><a href="#122-买卖股票的最佳时机-II" class="headerlink" title="122. 买卖股票的最佳时机 II"></a>122. 买卖股票的最佳时机 II</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>上一题的升级版！别人恐惧我贪婪，别人贪婪我恐惧！</p>
 <p><code>note：你在任何时候 最多 只能持有 一股 股票。你也可以购买它，然后在 同一天 出售。</code></p>
 <blockquote>
 <p>输入: prices = [7,1,5,3,6,4]<br>输出: 7<br>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</p>
 </blockquote>
-<h4 id="贪心题解-5"><a href="#贪心题解-5" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：<br>尽量的频繁交易，第一天买第二天就卖，不能拖！当然这是要建立在第二天价格高于第一天的前提下。</p>
+<h5 id="贪心题解-5"><a href="#贪心题解-5" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>尽量的频繁交易，第一天买第二天就卖，不能拖！当然这是要建立在第二天价格高于第一天的前提下。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prices<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         res <span class="token operator">=</span> <span class="token number">0</span>
@@ -603,13 +603,13 @@
             tmp <span class="token operator">=</span> p
         <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="605-种花问题"><a href="#605-种花问题" class="headerlink" title="605. 种花问题"></a>605. 种花问题</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/can-place-flowers/description/">leetcode</a></p>
+<h4 id="605-种花问题"><a href="#605-种花问题" class="headerlink" title="605. 种花问题"></a>605. 种花问题</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/can-place-flowers/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
 <p>跳格子！</p>
 <blockquote>
 <p>输入：flowerbed = [1,0,0,0,1], n = 1<br>输出：true</p>
 </blockquote>
-<h4 id="贪心题解-6"><a href="#贪心题解-6" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：<br>能种就种。</p>
+<h5 id="贪心题解-6"><a href="#贪心题解-6" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>能种就种。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">canPlaceFlowers</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> flowerbed<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
         res <span class="token operator">=</span> <span class="token number">0</span>
@@ -636,13 +636,13 @@
         <span class="token keyword">else</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token boolean">False</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="665-非递减数列"><a href="#665-非递减数列" class="headerlink" title="665. 非递减数列"></a>665. 非递减数列</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-decreasing-array/description/">leetcode</a></p>
+<h4 id="665-非递减数列"><a href="#665-非递减数列" class="headerlink" title="665. 非递减数列"></a>665. 非递减数列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-decreasing-array/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>我发现贪心思想都有点脑筋急转弯~</p>
 <blockquote>
 <p>输入: nums = [4,2,3]<br>输出: true<br>解释: 你可以通过把第一个 4 变成 1 来使得它成为一个非递减数列。</p>
 </blockquote>
-<h4 id="贪心题解-7"><a href="#贪心题解-7" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：<br>本题是要维持一个非递减的数列，所以遇到递减的情况时（nums[i] &gt; nums[i + 1]），要么将前面的元素缩小，要么将后面的元素放大。</p>
+<h5 id="贪心题解-7"><a href="#贪心题解-7" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>本题是要维持一个非递减的数列，所以遇到递减的情况时（nums[i] &gt; nums[i + 1]），要么将前面的元素缩小，要么将后面的元素放大。</p>
 <p>但是本题唯一的易错点就在这:</p>
 <ul>
 <li>如果将nums[i]缩小，可能会导致其无法融入前面已经遍历过的非递减子数列；</li>
@@ -677,13 +677,13 @@
                     nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span>
         <span class="token keyword">return</span> <span class="token boolean">True</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/description/">leetcode</a></p>
+<h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
 <p>此简单非彼简单，动态规划就行了。</p>
 <blockquote>
 <p>输入：nums = [-2,1,-3,4,-1,2,1,-5,4]<br>输出：6<br>解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</p>
 </blockquote>
-<h4 id="贪心题解-8"><a href="#贪心题解-8" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：<br>重点在<code>nums[i] += max(nums[i-1], 0)</code><br>要么nums[i] = nums[i] + nums[i-1] 前一项大于0，能让他变大<br>要么nums[i] = nums[i] 前一项不大于0，不能让他变大</p>
+<h5 id="贪心题解-8"><a href="#贪心题解-8" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>重点在<code>nums[i] += max(nums[i-1], 0)</code><br>要么nums[i] = nums[i] + nums[i-1] 前一项大于0，能让他变大<br>要么nums[i] = nums[i] 前一项不大于0，不能让他变大</p>
 <table>
 <thead>
 <tr>
@@ -747,13 +747,13 @@
                 res <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
         <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="763-划分字母区间"><a href="#763-划分字母区间" class="headerlink" title="763. 划分字母区间"></a>763. 划分字母区间</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/description/">leetcode</a></p>
+<h4 id="763-划分字母区间"><a href="#763-划分字母区间" class="headerlink" title="763. 划分字母区间"></a>763. 划分字母区间</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>有一说一，贪心思想真的绕弯弯！！！</p>
 <blockquote>
 <p>输入：S = “ababcbacadefegdehijhklij”<br>输出：[9,7,8]<br>解释：<br>划分结果为 “ababcbaca”, “defegde”, “hijhklij”。<br>每个字母最多出现在一个片段中。<br>像 “ababcbacadefegde”, “hijhklij” 的划分是错误的，因为划分的片段数较少。</p>
 </blockquote>
-<h4 id="贪心题解-9"><a href="#贪心题解-9" class="headerlink" title="贪心题解"></a>贪心题解</h4><p>具体思路如下：<br>首先呢，用字典记录所有出现字母的<code>出现位置start</code>和<code>消失位置end</code><br>然后呢，把所有的[start, end]组成一个新数组[[start0, end0], [start1, end1], …, [startN, endN]]，不用特意去排序，因为上一步找出来的[start, end]本来就是按start从小到大排序的<br>再后呢，开始遍历了，如果当前节点的start_i落在了前一个节点的[start_i-1, end_i-1]里面，就说明两个点重叠了，一旦发现这个条件不成立，就将<code>end - start + 1</code>加入结果，然后更新start和end。</p>
+<h5 id="贪心题解-9"><a href="#贪心题解-9" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>首先呢，用字典记录所有出现字母的<code>出现位置start</code>和<code>消失位置end</code><br>然后呢，把所有的[start, end]组成一个新数组[[start0, end0], [start1, end1], …, [startN, endN]]，不用特意去排序，因为上一步找出来的[start, end]本来就是按start从小到大排序的<br>再后呢，开始遍历了，如果当前节点的start_i落在了前一个节点的[start_i-1, end_i-1]里面，就说明两个点重叠了，一旦发现这个条件不成立，就将<code>end - start + 1</code>加入结果，然后更新start和end。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">partitionLabels</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
         hmpend <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
@@ -1055,13 +1055,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/tan-xin-si-xiang-fu-ben/">
+                <a href="/2022/04/08/leetcode/sou-suo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="刷爆leetcode：贪心思想">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="刷爆leetcode：搜索">
                         
-                        <span class="card-title">刷爆leetcode：贪心思想</span>
+                        <span class="card-title">刷爆leetcode：搜索</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1072,7 +1072,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
                         </span>
                         <span class="publish-author">
                             
@@ -1089,16 +1089,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3/">
-                        <span class="chip bg-color">贪心思想</span>
-                    </a>
-                    
                     <a href="/tags/DFS/">
                         <span class="chip bg-color">DFS</span>
                     </a>
                     
                     <a href="/tags/BFS/">
                         <span class="chip bg-color">BFS</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                        <span class="chip bg-color">搜索</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
                     </a>
                     
                 </div>
@@ -1112,13 +1116,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/fen-zhi-fa/241.wei-yun-suan-biao-da-shi-she-ji-you-xian-ji/">
+                <a href="/2022/04/01/leetcode/shuang-zhi-zhen/345.fan-zhuan-zi-fu-chuan-zhong-de-yuan-yin-zi-mu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="241. 为运算表达式设计优先级">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="345. 反转字符串中的元音字母">
                         
-                        <span class="card-title">241. 为运算表达式设计优先级</span>
+                        <span class="card-title">345. 反转字符串中的元音字母</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1146,8 +1150,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/">
-                        <span class="chip bg-color">分治法</span>
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1325,7 +1329,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">39.6k</span>&nbsp;字
+                class="white-color">6.8k</span>&nbsp;字
             
 
             <br>

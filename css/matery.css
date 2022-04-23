@@ -799,6 +799,11 @@ header .go-back i {
     margin-bottom: 10px;
 }
 
+/* #articles .row.tags-posts{
+    margin-top: -40px;
+    margin-bottom: 10px;
+} */
+
 article a {
     margin-right: 0 !important;
     color: #525f7f;
@@ -2031,3 +2036,7 @@ img {
     margin: -0.15rem 0;
 } */
 
+/* #articles {
+    margin-top: -490px;
+    margin-bottom: 10px;
+} */
