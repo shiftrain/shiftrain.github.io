@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -465,13 +465,13 @@
 <p>难度: <code>简单</code></p>
 <p>简单DP，开胃菜，不多说。</p>
 <blockquote>
-</blockquote>
 <p>输入：n = 2<br>输出：2<br>解释：有两种方法可以爬到楼顶。</p>
+</blockquote>
 <ol>
 <li>1 阶 + 1 阶</li>
 <li>2 阶</li>
 </ol>
-<h5 id="DP解法"><a href="#DP解法" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i]=dp[i-1]+dp[i-2]</strong></p>
+<h5 id="DP解法"><a href="#DP解法" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i] = dp[i-1] + dp[i-2]</strong></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span>
@@ -483,9 +483,9 @@
 <p>难度: <code>中等</code></p>
 <p>简单DP的小进阶。</p>
 <blockquote>
-</blockquote>
 <p>输入：[1,2,3,1]<br>输出：4<br>解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。<br>     偷窃到的最高金额 = 1 + 3 = 4 。</p>
-<h5 id="DP解法-1"><a href="#DP解法-1" class="headerlink" title="DP解法"></a>DP解法</h5><p>dp[i]=max(dp[i-2]+nums[i],dp[i-1])</p>
+</blockquote>
+<h5 id="DP解法-1"><a href="#DP解法-1" class="headerlink" title="DP解法"></a>DP解法</h5><p>dp[i] = max(dp[i-2] + nums[i], dp[i-1])</p>
 <p>[1,2,3,1]<br>[1]<br>[1,2]<br>[1,2,4]<br>[1,2,4,4]</p>
 <p>[4,1,2,4]<br>[4]<br>[4,4]<br>[4,4,6]<br>[4,4,6,8]</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
@@ -501,9 +501,9 @@
 <p>难度: <code>中等</code></p>
 <p>这题是上一题的进阶版，有一定思考上的难度，第一个和最后一个房间不能同时偷，其实就是一个环。<br>如何将这个特殊的问题一般化呢？其实很简单，拆成俩个普通的队列就行了。</p>
 <blockquote>
-</blockquote>
 <p>输入：nums = [2,3,2]<br>输出：3<br>解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。</p>
-<h5 id="DP解法-2"><a href="#DP解法-2" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i]=dp[i-1]+dp[i-2]</strong><br>分成两个队列，如<br>p :[1,2,3,4,5,6,7] =<br>p1:[1,2,3,4,5,6] +<br>p2:  [2,3,4,5,6,7]<br><strong>p1=max(p1,p2)</strong></p>
+</blockquote>
+<h5 id="DP解法-2"><a href="#DP解法-2" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i] = dp[i-1] + dp[i-2]</strong><br>分成两个队列，如<br>p :[1,2,3,4,5,6,7] =<br>p1:[1,2,3,4,5,6] +<br>p2:  [2,3,4,5,6,7]<br><strong>p1=max(p1,p2)</strong></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         l <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
@@ -521,14 +521,66 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-矩阵路径"><a href="#2-矩阵路径" class="headerlink" title="2 矩阵路径"></a>2 矩阵路径</h3><h4 id="64-最小路径和"><a href="#64-最小路径和" class="headerlink" title="64. 最小路径和"></a>64. 最小路径和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-path-sum/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
+<p>很简单的一种题型。</p>
 <img src="/2022/04/17/leetcode/dong-tai-gui-hua/1.jpg" class="" title="题目示例图">
 
 <blockquote>
-</blockquote>
 <p>输入：grid = [[1,3,1],[1,5,1],[4,2,1]]<br>输出：7<br>解释：因为路径 1→3→1→1→1 的总和最小。</p>
-<h5 id="DP解法-3"><a href="#DP解法-3" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i]=dp[i-1]+dp[i-2]</strong><br>分成两个队列，如<br>p :[1,2,3,4,5,6,7] =<br>p1:[1,2,3,4,5,6] +<br>p2:  [2,3,4,5,6,7]<br><strong>p1=max(p1,p2)</strong></p>
-<pre class="line-numbers language-python"><code class="language-python">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<h5 id="DP解法-3"><a href="#DP解法-3" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i][j] += max(dp[i-1][j], dp[i][j-1])</strong><br>note：<code>第1行&amp;第1列要特殊处理</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">minPathSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> grid<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        n<span class="token punctuation">,</span> m <span class="token operator">=</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">)</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+=</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+=</span> grid<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+=</span> min<span class="token punctuation">(</span>grid<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> grid<span class="token punctuation">[</span>n<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token number">-1</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="62-不同路径"><a href="#62-不同路径" class="headerlink" title="62. 不同路径"></a>62. 不同路径</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>增加信心题！</p>
+<img src="/2022/04/17/leetcode/dong-tai-gui-hua/2.png" class="" title="题目示例图">
+
+<blockquote>
+<p>输入：m = 3, n = 7<br>输出：28</p>
+</blockquote>
+<h5 id="DP解法-4"><a href="#DP解法-4" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i][j] = dp[i-1][j] + dp[i][j-1]</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">uniquePaths</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        grid <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>n<span class="token punctuation">]</span><span class="token operator">*</span>m
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> grid<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> grid<span class="token punctuation">[</span>m<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token number">-1</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-数组区间"><a href="#3-数组区间" class="headerlink" title="3 数组区间"></a>3 数组区间</h3><h4 id="303-区域和检索-数组不可变"><a href="#303-区域和检索-数组不可变" class="headerlink" title="303. 区域和检索 - 数组不可变"></a>303. 区域和检索 - 数组不可变</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/range-sum-query-immutable/description/">leetcode</a></p>
+<p>难度: <code>简单</code></p>
+<p>基础题！</p>
+<img src="/2022/04/17/leetcode/dong-tai-gui-hua/2.png" class="" title="题目示例图">
+
+<blockquote>
+<p>输入：m = 3, n = 7<br>输出：28</p>
+</blockquote>
+<h5 id="DP解法-5"><a href="#DP解法-5" class="headerlink" title="DP解法"></a>DP解法</h5><p><strong>dp[i][j] = dp[i-1][j] + dp[i][j-1]</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">uniquePaths</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        grid <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>n<span class="token punctuation">]</span><span class="token operator">*</span>m
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> grid<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> grid<span class="token punctuation">[</span>m<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token number">-1</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1073,7 +1125,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.2k</span>&nbsp;字
+                class="white-color">7.5k</span>&nbsp;字
             
 
             <br>
