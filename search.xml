@@ -114,9 +114,9 @@
     
     
     <entry>
-      <title>69. x 的平方根</title>
-      <link href="/2022/04/01/leetcode/er-fen-cha-zhao/69.x-de-ping-fang-gen/"/>
-      <url>/2022/04/01/leetcode/er-fen-cha-zhao/69.x-de-ping-fang-gen/</url>
+      <title>34. 在排序数组中查找元素的第一个和最后一个位置</title>
+      <link href="/2022/04/01/leetcode/er-fen-cha-zhao/34.zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-yi-ge-he-zui-hou-yi-ge-wei-zhi/"/>
+      <url>/2022/04/01/leetcode/er-fen-cha-zhao/34.zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-yi-ge-he-zui-hou-yi-ge-wei-zhi/</url>
       
         <content type="html"><![CDATA[<h2 id="222"><a href="#222" class="headerlink" title="222"></a>222</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
       
@@ -139,9 +139,9 @@
     
     
     <entry>
-      <title>34. 在排序数组中查找元素的第一个和最后一个位置</title>
-      <link href="/2022/04/01/leetcode/er-fen-cha-zhao/34.zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-yi-ge-he-zui-hou-yi-ge-wei-zhi/"/>
-      <url>/2022/04/01/leetcode/er-fen-cha-zhao/34.zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-yi-ge-he-zui-hou-yi-ge-wei-zhi/</url>
+      <title>69. x 的平方根</title>
+      <link href="/2022/04/01/leetcode/er-fen-cha-zhao/69.x-de-ping-fang-gen/"/>
+      <url>/2022/04/01/leetcode/er-fen-cha-zhao/69.x-de-ping-fang-gen/</url>
       
         <content type="html"><![CDATA[<h2 id="222"><a href="#222" class="headerlink" title="222"></a>222</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
       
@@ -264,31 +264,6 @@
     
     
     <entry>
-      <title>524. 通过删除字母匹配到字典里最长单词</title>
-      <link href="/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/"/>
-      <url>/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/</url>
-      
-        <content type="html"><![CDATA[<h2 id="222"><a href="#222" class="headerlink" title="222"></a>222</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> leetcode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 双指针 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>633. 平方数之和</title>
       <link href="/2022/04/01/leetcode/shuang-zhi-zhen/633.ping-fang-shu-zhi-he/"/>
       <url>/2022/04/01/leetcode/shuang-zhi-zhen/633.ping-fang-shu-zhi-he/</url>
@@ -356,6 +331,31 @@
         <tags>
             
             <tag> 排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>524. 通过删除字母匹配到字典里最长单词</title>
+      <link href="/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/"/>
+      <url>/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/</url>
+      
+        <content type="html"><![CDATA[<h2 id="222"><a href="#222" class="headerlink" title="222"></a>222</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 双指针 </tag>
             
         </tags>
       
