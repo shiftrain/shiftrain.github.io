@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.2k
                 </div>
                 
 
@@ -636,6 +636,26 @@
 <p>yy = [1, 2, 3]</p>
 <p>*<em>dp[x] = min(dp[x], 1 + dp[x-yy</em>yy])**</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">numSquares</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        dp <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+        y <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x <span class="token operator">==</span> y<span class="token operator">*</span>y<span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+                y <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> x
+                <span class="token keyword">for</span> yy <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> min<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>x<span class="token operator">-</span>yy<span class="token operator">*</span>yy<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="279-完全平方数-1"><a href="#279-完全平方数-1" class="headerlink" title="279. 完全平方数"></a>279. 完全平方数</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/perfect-squares/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>这题之前做过，重做一遍吧！</p>
+<blockquote>
+<p>输入：n = 12<br>输出：3<br>解释：12 = 4 + 4 + 4</p>
+</blockquote>
+<h5 id="DP解法-9"><a href="#DP解法-9" class="headerlink" title="DP解法"></a>DP解法</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">numSquares</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         dp <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
         y <span class="token operator">=</span> <span class="token number">1</span>
@@ -1193,7 +1213,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.3k</span>&nbsp;字
+                class="white-color">8.4k</span>&nbsp;字
             
 
             <br>
