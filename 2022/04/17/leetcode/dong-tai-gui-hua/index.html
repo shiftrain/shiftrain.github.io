@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -634,7 +634,7 @@
 <p>12 = 1 + 11 –&gt; 1 + 3 = 4<br>12 = 4 + 8  –&gt; 1 + 2 = 3 (min)<br>12 = 9 + 3  –&gt; 1 + 3 = 4</p>
 <p>综合就这三种情况了，看看哪个小就行了，这个是不固定的。</p>
 <p>yy = [1, 2, 3]</p>
-<p>*<em>dp[x] = min(dp[x], 1 + dp[x-yy</em>yy])**</p>
+<p>*<em>dp[x] = min(dp[x], 1+dp[x-yy</em>yy])**</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">numSquares</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         dp <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
@@ -649,26 +649,47 @@
                     dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> min<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>x<span class="token operator">-</span>yy<span class="token operator">*</span>yy<span class="token punctuation">]</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="279-完全平方数-1"><a href="#279-完全平方数-1" class="headerlink" title="279. 完全平方数"></a>279. 完全平方数</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/perfect-squares/description/">leetcode</a></p>
+<h4 id="91-解码方法"><a href="#91-解码方法" class="headerlink" title="91. 解码方法"></a>91. 解码方法</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/decode-ways/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
-<p>这题之前做过，重做一遍吧！</p>
+<p>这题我觉得应该先处理数字，然后再将数字转化成对应的字母。</p>
 <blockquote>
-<p>输入：n = 12<br>输出：3<br>解释：12 = 4 + 4 + 4</p>
+<p>输入：s = “226”<br>输出：3<br>解释：它可以解码为 “BZ” (2 26), “VF” (22 6), 或者 “BBF” (2 2 6) 。</p>
 </blockquote>
-<h5 id="DP解法-9"><a href="#DP解法-9" class="headerlink" title="DP解法"></a>DP解法</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">numSquares</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        dp <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
-        y <span class="token operator">=</span> <span class="token number">1</span>
-        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> x <span class="token operator">==</span> y<span class="token operator">*</span>y<span class="token punctuation">:</span>
-                dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
-                y <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> x
-                <span class="token keyword">for</span> yy <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                    dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> min<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>x<span class="token operator">-</span>yy<span class="token operator">*</span>yy<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<h5 id="DP解法-9"><a href="#DP解法-9" class="headerlink" title="DP解法"></a>DP解法</h5><p>做个测试<br><strong>2261</strong></p>
+<ul>
+<li>2</li>
+<li>2 2 / 22</li>
+<li>2 2 6 / 22 6 / 2 26</li>
+<li>2 2 6 1 / 2 2 61 / 22 6 1 / 22 61 / 2 26 1<br>可以发现，每一层都是上一层的演化<br>dp[226] = dp[22] + 6<br>😘 &rarr; 2 2 + 6 = 2 2 6 / 2 26<br>😘 &rarr; 22 + 6 = 22 6<br>又如：22 6 + 6 = 22 6 6 / 22 66(当然这里66不应该出现)<br>总之就是a b + c = a b c / a bc<br>要考虑最后一位是否可以与+的数组合。<br>2 2 / 22 –&gt; [[“2”,”2”],[“22”]]<br>6 –&gt; “6”</li>
+</ul>
+<p>emmmmmmmmm 这样确实可行, 但是…复杂度太高了, 有O(n^2)了吧!!</p>
+<p>还是看官方题解吧…</p>
+<img src="/2022/04/17/leetcode/dong-tai-gui-hua/4.png" class="" title="别人的思路">
+
+<p>官方的思路:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"0"</span><span class="token punctuation">:</span>
+    可以单独进行解码<span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    如<span class="token punctuation">:</span> <span class="token number">12</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token number">12</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"12"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span>
+        <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"3"</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">[</span><span class="token string">"12"</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"3"</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"12"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"0"</span><span class="token operator">and</span> s<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">26</span><span class="token punctuation">:</span>
+    可以和前面一位组合起来进行解码<span class="token punctuation">(</span><span class="token number">2</span>位<span class="token punctuation">)</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span>
+    如<span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token number">12</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"12"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span>
+        <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"23"</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"23"</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">numDecodings</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        n <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> n
+        <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"0"</span><span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> i <span class="token operator">></span> <span class="token number">1</span> <span class="token operator">and</span> s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"0"</span> <span class="token operator">and</span> int<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token number">-2</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">26</span><span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
         <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1213,7 +1234,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.4k</span>&nbsp;字
+                class="white-color">8.7k</span>&nbsp;字
             
 
             <br>
