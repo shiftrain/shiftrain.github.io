@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
 
@@ -722,6 +722,38 @@
             tail<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
         <span class="token keyword">return</span> len<span class="token punctuation">(</span>tail<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="300-最长递增子序列-1"><a href="#300-最长递增子序列-1" class="headerlink" title="300. 最长递增子序列"></a>300. 最长递增子序列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-length-of-pair-chain/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>最长递增子序列的变种。</p>
+<blockquote>
+<p>输入：[[1,2], [2,3], [3,4]]<br>输出：2<br>解释：最长的数对链是 [1,2] -&gt; [3,4]</p>
+</blockquote>
+<h5 id="DP解法-11"><a href="#DP解法-11" class="headerlink" title="DP解法"></a>DP解法</h5><p>&lt;&lt; Holding Out For A Hero – HITAK &gt;&gt;</p>
+<p>这题比较怪异，用dp做属实不明智，贪心yyds。</p>
+<p>先说dp吧，dp的话做法就和上一题一样，但是上一题要求的是上升子序列，有顺序的，从前往后，但这一题其实并不要求顺序，可以随意连接，所以我们需要先排个序。<br>（所以说既然都排序了，那为什么不直接用贪心，矮，就是玩~）</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token keyword">def</span> <span class="token function">findLongestChain</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pairs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pairs<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> len<span class="token punctuation">(</span>pairs<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>pairs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> pairs<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> pairs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="贪心解法"><a href="#贪心解法" class="headerlink" title="贪心解法"></a>贪心解法</h5><p>&lt;&lt; Holding Out For A Hero – HITAK &gt;&gt; zhenhaoting</p>
+<p>所以说还是用贪心吧，做法就是会议问题，按结尾时间排序，力求参与更多数量的会议。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findLongestChain</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pairs<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        pairs<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> c<span class="token punctuation">:</span>c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        tmp <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">0x3f3f3f3f</span>
+        cnt <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> p <span class="token keyword">in</span> pairs<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">></span> tmp<span class="token punctuation">:</span>
+                tmp <span class="token operator">=</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+                cnt <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> cnt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1266,7 +1298,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9k</span>&nbsp;字
+                class="white-color">9.2k</span>&nbsp;字
             
 
             <br>
