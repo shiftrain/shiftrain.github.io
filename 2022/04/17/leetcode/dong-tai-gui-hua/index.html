@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -754,6 +754,36 @@
                 cnt <span class="token operator">+=</span> <span class="token number">1</span>
         <span class="token keyword">return</span> cnt
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="376-摆动序列"><a href="#376-摆动序列" class="headerlink" title="376. 摆动序列"></a>376. 摆动序列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/wiggle-subsequence/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>dp的经典题型，上上题的变种问题。</p>
+<p>这题做出了还是很简单的，但是只能超过10%…大无语，所以还是很难的，毕竟官方题解看起来很装逼…</p>
+<blockquote>
+<p>输入：nums = [1,7,4,9,2,5]<br>输出：6<br>解释：整个序列均为摆动序列，各元素之间的差值为 (6, -3, 5, -7, 3) 。</p>
+</blockquote>
+<h5 id="虚假的DP解法"><a href="#虚假的DP解法" class="headerlink" title="虚假的DP解法"></a>虚假的DP解法</h5><p>自己瞎写的，勉强过了，说是dp，其实我感觉像是暴力。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wiggleMaxLength</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        size <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> size <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> size
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">*</span>size
+        st <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>size
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+                st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+        mx <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> st<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">and</span> st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+            mx <span class="token operator">=</span> max<span class="token punctuation">(</span>mx<span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> mx
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1298,7 +1328,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.2k</span>&nbsp;字
+                class="white-color">9.5k</span>&nbsp;字
             
 
             <br>
