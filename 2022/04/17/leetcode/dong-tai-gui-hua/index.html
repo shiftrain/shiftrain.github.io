@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    24 分
                 </div>
                 
 
@@ -923,6 +923,41 @@ output<span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
         <span class="token keyword">return</span> dp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">[</span>neg<span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="474-一和零"><a href="#474-一和零" class="headerlink" title="474. 一和零"></a>474. 一和零</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ones-and-zeroes/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>这题是三维的0-1背包问题，第一次做真的不容易啊，因为三维的没法画表格···<br>总之这题受益匪浅</p>
+<blockquote>
+<p>输入：strs = [“10”, “0001”, “111001”, “1”, “0”], m = 5, n = 3<br>输出：4<br>解释：最多有 5 个 0 和 3 个 1 的最大子集是 {“10”,”0001”,”1”,”0”} ，因此答案是 4 。<br>其他满足题意但较小的子集包括 {“0001”,”1”} 和 {“10”,”1”,”0”} 。{“111001”} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。</p>
+</blockquote>
+<h5 id="DP解法-15"><a href="#DP解法-15" class="headerlink" title="DP解法"></a>DP解法</h5><p>考虑这题可以首先进行降维思考，我们不同时考虑0和1，就假设只有一个元素，这样就可以把他当成一个普通的0-1背包问题了。<br>本题要求的是<code>最多可以在背包里放几个（放满）</code>，那么如何选择呢？<br>无非是多一步统计’0’和’1’，然后给dp数组加一维。<br>一般是$dp[i][j] = max(dp[i-1][j], dp[i-1][j-zero]+1)$<br>这里变成$dp[i][j][k] = max(dp[i-1][j][k], dp[i-1][j-zero][k-one]+1)$</p>
+<p>首先尝试用三维做一下，如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findMaxForm</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        size <span class="token operator">=</span> len<span class="token punctuation">(</span>strs<span class="token punctuation">)</span>
+
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>size<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> size<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            zero <span class="token operator">=</span> strs<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span>
+            one <span class="token operator">=</span> len<span class="token punctuation">(</span>strs<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span>zero
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span>
+                    <span class="token keyword">if</span> j <span class="token operator">>=</span> zero <span class="token operator">and</span> k <span class="token operator">>=</span> one<span class="token punctuation">:</span>
+                        dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>zero<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token operator">-</span>one<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然但是三维太浪费空间，同时也浪费一定时间，所以可以进行空间优化。<br>这里可以使用滚动数组的方式，省略i这一维，但是j和k的内层循环需采用倒序遍历的方式，因为dp[j-zero][k-one]需要考虑dp[j][k]前面的数组元素，不能让前面的先被修改，应该先修改后面的元素。<br>代码如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findMaxForm</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> str <span class="token keyword">in</span> strs<span class="token punctuation">:</span>
+            zero <span class="token operator">=</span> str<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span>
+            one <span class="token operator">=</span> len<span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token operator">-</span>zero
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">,</span> zero<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">,</span> one<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j<span class="token operator">-</span>zero<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token operator">-</span>one<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1467,7 +1502,7 @@ output<span class="token punctuation">:</span>
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.8k</span>&nbsp;字
+                class="white-color">11.4k</span>&nbsp;字
             
 
             <br>
