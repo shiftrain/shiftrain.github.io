@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    25 分
                 </div>
                 
 
@@ -946,7 +946,7 @@ output<span class="token punctuation">:</span>
                         dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>zero<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token operator">-</span>one<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> dp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然但是三维太浪费空间，同时也浪费一定时间，所以可以进行空间优化。<br>这里可以使用滚动数组的方式，省略i这一维，但是j和k的内层循环需采用倒序遍历的方式，因为dp[j-zero][k-one]需要考虑dp[j][k]前面的数组元素，不能让前面的先被修改，应该先修改后面的元素。<br>代码如下：</p>
+<p>然但是三维太浪费空间，同时也浪费一定时间，所以可以进行空间优化。<br>这里可以使用滚动数组的方式，省略i这一维，但是j和k的内层循环需采用倒序遍历的方式，因为dp[j-zero][k-one]需要考虑dp[j][k]前面的数组元素，不能让前面的先被修改，应该先修改后面的元素。<br>同时循环遍历范围应该是range(m, zero-1, -1)和range(n, one-1, -1)，因为除此之外的范围都是保持不变的，在三维中是dp[i][j][k] = dp[i-1][j][k]，在二维中是dp[j][k] = dp[j][k]。<br>代码如下：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">findMaxForm</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
@@ -1502,7 +1502,7 @@ output<span class="token punctuation">:</span>
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.4k</span>&nbsp;字
+                class="white-color">11.5k</span>&nbsp;字
             
 
             <br>
