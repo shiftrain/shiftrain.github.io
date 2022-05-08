@@ -438,14 +438,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    876
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    14 分
                 </div>
                 
 
@@ -473,24 +473,24 @@
 <li>（4） 查找顶点v的所以子节点，并依次进入队列；</li>
 <li>（5） 转到步骤（2）。</li>
 </ul>
-<h4 id="1-2-Python伪代码"><a href="#1-2-Python伪代码" class="headerlink" title="1.2 Python伪代码"></a>1.2 Python伪代码</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">def BFS(root):
-　　Q=[]
-　　Q.append(root[0])
-　　while len(Q)>0:
-　　　　node=Q.pop(0)
-　　　　print (node)
-　　　　for i in node_child:
-　　　　　　Q.append(node_child[i])
+<h4 id="1-2-Python伪代码"><a href="#1-2-Python伪代码" class="headerlink" title="1.2 Python伪代码"></a>1.2 Python伪代码</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">BFS</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+　　Q<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+　　Q<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+　　<span class="token keyword">while</span> len<span class="token punctuation">(</span>Q<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+　　　　node<span class="token operator">=</span>Q<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+　　　　<span class="token keyword">print</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+　　　　<span class="token keyword">for</span> i <span class="token keyword">in</span> node_child<span class="token punctuation">:</span>
+　　　　　　Q<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node_child<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-深度优先算法DFS-Depth-First-Search"><a href="#2-深度优先算法DFS-Depth-First-Search" class="headerlink" title="2 深度优先算法DFS(Depth First Search)"></a>2 深度优先算法DFS(Depth First Search)</h3><h4 id="2-1-基本实现思想"><a href="#2-1-基本实现思想" class="headerlink" title="2.1 基本实现思想"></a>2.1 基本实现思想</h4><ul>
 <li>（1） 访问顶点v，打印节点；</li>
 <li>（2） 遍历v的子节点w，while（w存在），递归执行该节点；</li>
 </ul>
-<h4 id="2-2-Python伪代码"><a href="#2-2-Python伪代码" class="headerlink" title="2.2 Python伪代码"></a>2.2 Python伪代码</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">def DFS(Vetex v):
-    Visited[v] = true;
-    for each w adjacent to v:
-       　if not Visited[w]:
-            DFS(w);
+<h4 id="2-2-Python伪代码"><a href="#2-2-Python伪代码" class="headerlink" title="2.2 Python伪代码"></a>2.2 Python伪代码</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">DFS</span><span class="token punctuation">(</span>Vetex v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    Visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> true<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> each w adjacent to v<span class="token punctuation">:</span>
+       　<span class="token keyword">if</span> <span class="token operator">not</span> Visited<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            DFS<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-回溯-Backtracking"><a href="#3-回溯-Backtracking" class="headerlink" title="3 回溯(Backtracking)"></a>3 回溯(Backtracking)</h3><h4 id="3-1-基本实现思想"><a href="#3-1-基本实现思想" class="headerlink" title="3.1 基本实现思想"></a>3.1 基本实现思想</h4><p>Backtracking（回溯）属于 DFS。</p>
 <ul>
@@ -502,37 +502,38 @@
 <h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="1-BFS"><a href="#1-BFS" class="headerlink" title="1 BFS"></a>1 BFS</h3><h4 id="1091-二进制矩阵中的最短路径"><a href="#1091-二进制矩阵中的最短路径" class="headerlink" title="1091. 二进制矩阵中的最短路径"></a>1091. 二进制矩阵中的最短路径</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <img src="/2022/04/08/leetcode/sou-suo/0.png" class="" title="题目例图">
+
 <p>BFS模板题，开胃菜，不多说。</p>
 <blockquote>
-<p>输入：grid = [[0,1],[1,0]]<br>输出：2</p>
+<p>输入：grid &#x3D; [[0,1],[1,0]]<br>输出：2</p>
 </blockquote>
 <h5 id="普通BFS题解"><a href="#普通BFS题解" class="headerlink" title="普通BFS题解"></a>普通BFS题解</h5><p>思路就是BFS</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
-        if grid[0][0] != 0:
-            return -1
-        length = len(grid)
-        if length == 1:
-            return 1
-        q = deque()
-        visit = &#123;&#125;
-        direct = [(-1,-1), (-1,0), (-1,1), (0,1), (1,1), (1,0), (1,-1), (0,-1)]
-        q.appendleft((0,0))
-        visit[(0,0)] = True
-        step = 1
-        while q:
-            for _ in range(len(grid)):
-                x, y = q.pop()
-                for pos_x, pos_y in direct:
-                    new_x = x + pos_x
-                    new_y = y + pos_y
-                    if 0 <= new_x < length and 0 <= new_y <length and grid[new_x][new_y] == 0 and not visit.get((new_x, new_y)):
-                        if new_x == length - 1 and new_y == length - 1:
-                            return step + 1
-                        q.appendleft((new_x, new_y))
-                        visit[(new_x, new_y)] = True
-            step += 1
-        return -1
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">shortestPathBinaryMatrix</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> grid<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+        length <span class="token operator">=</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span>
+        q <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        visit <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+        direct <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        q<span class="token punctuation">.</span>appendleft<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        visit<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+        step <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> q<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>grid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                x<span class="token punctuation">,</span> y <span class="token operator">=</span> q<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword">for</span> pos_x<span class="token punctuation">,</span> pos_y <span class="token keyword">in</span> direct<span class="token punctuation">:</span>
+                    new_x <span class="token operator">=</span> x <span class="token operator">+</span> pos_x
+                    new_y <span class="token operator">=</span> y <span class="token operator">+</span> pos_y
+                    <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> new_x <span class="token operator">&lt;</span> length <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> new_y <span class="token operator">&lt;</span>length <span class="token operator">and</span> grid<span class="token punctuation">[</span>new_x<span class="token punctuation">]</span><span class="token punctuation">[</span>new_y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> <span class="token operator">not</span> visit<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span>new_x<span class="token punctuation">,</span> new_y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        <span class="token keyword">if</span> new_x <span class="token operator">==</span> length <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">and</span> new_y <span class="token operator">==</span> length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                            <span class="token keyword">return</span> step <span class="token operator">+</span> <span class="token number">1</span>
+                        q<span class="token punctuation">.</span>appendleft<span class="token punctuation">(</span><span class="token punctuation">(</span>new_x<span class="token punctuation">,</span> new_y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        visit<span class="token punctuation">[</span><span class="token punctuation">(</span>new_x<span class="token punctuation">,</span> new_y<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+            step <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="127-单词接龙"><a href="#127-单词接龙" class="headerlink" title="127. 单词接龙"></a>127. 单词接龙</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-ladder/description/">leetcode</a></p>
 <p>难度: <code>困难</code></p>
@@ -543,297 +544,306 @@
 <li>可以使用大括号<code>&#123;&#125;</code>或者<code>set()</code>函数创建集合，但是注意如果创建一个空集合必须用set()而不是{}，因为{}是用来表示空字典类型的。</li>
 </ul>
 <p>说白了set()就是一个HashTable。</p>
-<p>但其实更优的策略是使用双向BFS（但我发现并没有提高太大的效率，反正困难题暂时不求甚解，过了就行）（我才不是不会优化建图呢==!）</p>
+<p>但其实更优的策略是使用双向BFS（但我发现并没有提高太大的效率，反正困难题暂时不求甚解，过了就行）（我才不是不会优化建图呢&#x3D;&#x3D;!）</p>
 <blockquote>
-<p>输入：beginWord = “hit”, endWord = “cog”, wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出：5<br>解释：一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”, 返回它的长度 5。</p>
+<p>输入：beginWord &#x3D; “hit”, endWord &#x3D; “cog”, wordList &#x3D; [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出：5<br>解释：一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”, 返回它的长度 5。</p>
 </blockquote>
 <h5 id="普通BFS题解-1"><a href="#普通BFS题解-1" class="headerlink" title="普通BFS题解"></a>普通BFS题解</h5><p>思路如图所示。</p>
 <img src="/2022/04/08/leetcode/sou-suo/1.png" class="" title="普通BFS">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> in:
-        st = set(wordList)
-        if endWord not in st:
-            return 0
-        if beginWord == endWord:
-            return 1
-        que = deque()
-        que.append((beginWord, 1))
-        vis = set()
-        vis.add(beginWord)
 
-        length = len(beginWord)
-        while que:
-            word, step = que.popleft()
-            if word == endWord:
-                return step
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">ladderLength</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> beginWord<span class="token punctuation">:</span> str<span class="token punctuation">,</span> endWord<span class="token punctuation">:</span> str<span class="token punctuation">,</span> wordList<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">in</span><span class="token punctuation">:</span>
+        st <span class="token operator">=</span> set<span class="token punctuation">(</span>wordList<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> endWord <span class="token operator">not</span> <span class="token keyword">in</span> st<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token keyword">if</span> beginWord <span class="token operator">==</span> endWord<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span>
+        que <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        que<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>beginWord<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        vis <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        vis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>beginWord<span class="token punctuation">)</span>
 
-            for i in range(length):
-                for j in range(26):
-                    tmp = word[:i] + chr(j + 97) + word[i+1:]
-                    if tmp not in vis and tmp in st:
-                        que.append((tmp, step + 1))
-                        vis.add(tmp)
-        return 0
+        length <span class="token operator">=</span> len<span class="token punctuation">(</span>beginWord<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> que<span class="token punctuation">:</span>
+            word<span class="token punctuation">,</span> step <span class="token operator">=</span> que<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> word <span class="token operator">==</span> endWord<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> step
+
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    tmp <span class="token operator">=</span> word<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> chr<span class="token punctuation">(</span>j <span class="token operator">+</span> <span class="token number">97</span><span class="token punctuation">)</span> <span class="token operator">+</span> word<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+                    <span class="token keyword">if</span> tmp <span class="token operator">not</span> <span class="token keyword">in</span> vis <span class="token operator">and</span> tmp <span class="token keyword">in</span> st<span class="token punctuation">:</span>
+                        que<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> step <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        vis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="双向BFS题解"><a href="#双向BFS题解" class="headerlink" title="双向BFS题解"></a>双向BFS题解</h5><img src="/2022/04/08/leetcode/sou-suo/2.png" class="" title="普通BFS">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
-        st = set(wordList)
-        if endWord not in st:
-            return 0
-        if beginWord == endWord:
-            return 1
-        lque = deque()
-        rque = deque()
-        lque.append(beginWord)
-        rque.append(endWord)
 
-        lvis = set()
-        rvis = set()
-        lvis.add(beginWord)
-        rvis.add(endWord)
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">ladderLength</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> beginWord<span class="token punctuation">:</span> str<span class="token punctuation">,</span> endWord<span class="token punctuation">:</span> str<span class="token punctuation">,</span> wordList<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        st <span class="token operator">=</span> set<span class="token punctuation">(</span>wordList<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> endWord <span class="token operator">not</span> <span class="token keyword">in</span> st<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token keyword">if</span> beginWord <span class="token operator">==</span> endWord<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span>
+        lque <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        rque <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        lque<span class="token punctuation">.</span>append<span class="token punctuation">(</span>beginWord<span class="token punctuation">)</span>
+        rque<span class="token punctuation">.</span>append<span class="token punctuation">(</span>endWord<span class="token punctuation">)</span>
+        
+        lvis <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        rvis <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        lvis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>beginWord<span class="token punctuation">)</span>
+        rvis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>endWord<span class="token punctuation">)</span>
 
-        length = len(beginWord)
-        step = 0
+        length <span class="token operator">=</span> len<span class="token punctuation">(</span>beginWord<span class="token punctuation">)</span>
+        step <span class="token operator">=</span> <span class="token number">0</span>
 
-        while lque and rque:
-            if len(lque) < len(rque):
-                lque, rque = rque, lque
-                lvis, rvis = rvis, lvis
-            step += 1
+        <span class="token keyword">while</span> lque <span class="token operator">and</span> rque<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>lque<span class="token punctuation">)</span> <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>rque<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                lque<span class="token punctuation">,</span> rque <span class="token operator">=</span> rque<span class="token punctuation">,</span> lque
+                lvis<span class="token punctuation">,</span> rvis <span class="token operator">=</span> rvis<span class="token punctuation">,</span> lvis
+            step <span class="token operator">+=</span> <span class="token number">1</span>
 
-            for _ in range(len(lque)):
-                word = lque.popleft()
-                # if word in rvis:
-                #     return step
-                for i in range(length):
-                    for j in range(26):
-                        tmp = word[:i] + chr(j + 97) + word[i+1:]
-                        if tmp not in lvis and tmp in st:
-                            if tmp in rvis:
-                                return step + 1
-                            lque.append(tmp)
-                            lvis.add(tmp)
-        return 0
+            <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>lque<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                word <span class="token operator">=</span> lque<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token comment" spellcheck="true"># if word in rvis:</span>
+                <span class="token comment" spellcheck="true">#     return step</span>
+                <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        tmp <span class="token operator">=</span> word<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> chr<span class="token punctuation">(</span>j <span class="token operator">+</span> <span class="token number">97</span><span class="token punctuation">)</span> <span class="token operator">+</span> word<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+                        <span class="token keyword">if</span> tmp <span class="token operator">not</span> <span class="token keyword">in</span> lvis <span class="token operator">and</span> tmp <span class="token keyword">in</span> st<span class="token punctuation">:</span>
+                            <span class="token keyword">if</span> tmp <span class="token keyword">in</span> rvis<span class="token punctuation">:</span>
+                                <span class="token keyword">return</span> step <span class="token operator">+</span> <span class="token number">1</span>
+                            lque<span class="token punctuation">.</span>append<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+                            lvis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-DFS"><a href="#2-DFS" class="headerlink" title="2 DFS"></a>2 DFS</h3><h4 id="695-岛屿的最大面积"><a href="#695-岛屿的最大面积" class="headerlink" title="695. 岛屿的最大面积"></a>695. 岛屿的最大面积</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-ladder/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <img src="/2022/04/08/leetcode/sou-suo/3.png" class="" title="题目例图">
+
 <p>这题是典型的岛类问题，其实用DFS、BFS、并查集都是可以做的。<br>我个人使用的DFS，因为代码量我感觉更小（可能是我菜）。</p>
 <blockquote>
-<p>输入：beginWord = “hit”, endWord = “cog”, wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出：5<br>解释：一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”, 返回它的长度 5。</p>
+<p>输入：beginWord &#x3D; “hit”, endWord &#x3D; “cog”, wordList &#x3D; [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出：5<br>解释：一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”, 返回它的长度 5。</p>
 </blockquote>
 <h5 id="普通DFS题解"><a href="#普通DFS题解" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>大概是这个样子！</p>
 <img src="/2022/04/08/leetcode/sou-suo/4.png" class="" title="题解例图">
+
 <p>遍历整个grid，对于遇到的每个<code>grid == 1</code>，都进行一次DFS，注意不需要回溯，因为访问过的就不能再次访问了。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        def dfs(grid, x, y) -> int:
-            if x < 0 or y < 0 or x > len(grid) - 1 or y > len(grid[0]) - 1 or grid[x][y] != 1:
-                return 0
-            grid[x][y] = 0
-            cnt = 1
-            cnt += dfs(grid, x, y + 1)
-            cnt += dfs(grid, x, y - 1)
-            cnt += dfs(grid, x + 1, y)
-            cnt += dfs(grid, x - 1, y)
-            return cnt
-        cnt = 0
-        for i, line in enumerate(grid):
-            for j, _ in enumerate(line):
-                cnt = max(cnt, dfs(grid, i, j))
-        return cnt
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxAreaOfIsland</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> grid<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> y <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> x <span class="token operator">></span> len<span class="token punctuation">(</span>grid<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">or</span> y <span class="token operator">></span> len<span class="token punctuation">(</span>grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">or</span> grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token number">0</span>
+            grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+            cnt <span class="token operator">=</span> <span class="token number">1</span>
+            cnt <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            cnt <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            cnt <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+            cnt <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> cnt
+        cnt <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> line <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>grid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j<span class="token punctuation">,</span> _ <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                cnt <span class="token operator">=</span> max<span class="token punctuation">(</span>cnt<span class="token punctuation">,</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> cnt
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>这里用了4个单独的dfs是为了&quot;优化&quot;哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！</code></p>
 <h4 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a>200. 岛屿数量</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-islands/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>这题也是典型的岛类问题，用DFS、BFS、并查集也都是可以做的。<br>DFSDFSDFS!!!</p>
 <blockquote>
-<p>输入：grid = [<br>  [“1”,”1”,”1”,”1”,”0”],<br>  [“1”,”1”,”0”,”1”,”0”],<br>  [“1”,”1”,”0”,”0”,”0”],<br>  [“0”,”0”,”0”,”0”,”0”]<br>]<br>输出：1</p>
+<p>输入：grid &#x3D; [<br>  [“1”,”1”,”1”,”1”,”0”],<br>  [“1”,”1”,”0”,”1”,”0”],<br>  [“1”,”1”,”0”,”0”,”0”],<br>  [“0”,”0”,”0”,”0”,”0”]<br>]<br>输出：1</p>
 </blockquote>
 <h5 id="普通DFS题解-1"><a href="#普通DFS题解-1" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>这个更简单了!</p>
 <img src="/2022/04/08/leetcode/sou-suo/5.gif" class="" title="题解例图">
+
 <p>遍历整个grid，对于遇到的每个<code>grid == 1</code>，都进行一次DFS，也是要注意不需要回溯，因为访问过的就不能再次访问了。</p>
 <p>其实是上一题的简化版。</p>
 <p>例图里是<code>1-&gt;2</code>，但实际上我用的是<code>1-&gt;0</code>，岂不是更妙？</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        def dfs(grid, x, y) -> int:
-            if not 0 <= x <= len(grid) -1 or not 0 <= y <= len(grid[0]) - 1 or grid[x][y] == "0":
-                return 0
-            grid[x][y] = "0"
-            cnt = 1
-            dfs(grid, x, y + 1)
-            dfs(grid, x, y - 1)
-            dfs(grid, x + 1, y)
-            dfs(grid, x - 1, y)
-            return cnt
-        cnt = 0
-        for i, line in enumerate(grid):
-            for j, node in enumerate(line):
-                if node == "1":
-                    cnt += dfs(grid, i, j)
-        return cnt
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">numIslands</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> grid<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> x <span class="token operator">&lt;=</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">or</span> <span class="token operator">not</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> y <span class="token operator">&lt;=</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">or</span> grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"0"</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token number">0</span>
+            grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"0"</span>
+            cnt <span class="token operator">=</span> <span class="token number">1</span>
+            dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> cnt
+        cnt <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> line <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>grid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j<span class="token punctuation">,</span> node <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> node <span class="token operator">==</span> <span class="token string">"1"</span><span class="token punctuation">:</span>
+                    cnt <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>grid<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> cnt
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="130-被围绕的区域"><a href="#130-被围绕的区域" class="headerlink" title="130. 被围绕的区域"></a>130. 被围绕的区域</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/surrounded-regions/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>我认为啊，这道题不难，但是有陷阱，它并不是说把非边界的<code>O</code>都换成<code>X</code>，而是强调与处在边界的<code>O</code>相连的<code>O</code>其实都是不可以变的。</p>
 <p>理解了这里，就简单多了。</p>
 <blockquote>
-<p>输入：board = [[“X”,”X”,”X”,”X”],[“X”,”O”,”O”,”X”],[“X”,”X”,”O”,”X”],[“X”,”O”,”X”,”X”]]<br>输出：[[“X”,”X”,”X”,”X”],[“X”,”X”,”X”,”X”],[“X”,”X”,”X”,”X”],[“X”,”O”,”X”,”X”]]<br>解释：被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</p>
+<p>输入：board &#x3D; [[“X”,”X”,”X”,”X”],[“X”,”O”,”O”,”X”],[“X”,”X”,”O”,”X”],[“X”,”O”,”X”,”X”]]<br>输出：[[“X”,”X”,”X”,”X”],[“X”,”X”,”X”,”X”],[“X”,”X”,”X”,”X”],[“X”,”O”,”X”,”X”]]<br>解释：被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</p>
 </blockquote>
 <h5 id="普通DFS题解-2"><a href="#普通DFS题解-2" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>具体思路是，把处在边界的<code>O</code>和与其相连的<code>O</code>先临时处理为<code>F</code>，然后进行遍历，遇到<code>O</code>就DFS，把所有的<code>O</code>都变成<code>X</code>。</p>
 <p>最后别忘了把设为<code>F</code>的<code>O</code>重置回去。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def solve(self, board: List[List[str]]) -> None:
-        def dfs(board, i, j) -> None:
-            if not 0 <= i <= len(board) - 1 or not 0 <= j <= len(board[0]) - 1 or board[i][j] != 'O' :
-                return
-            board[i][j] = 'F'
-            dfs(board, i, j + 1)
-            dfs(board, i, j - 1)
-            dfs(board, i + 1, j)
-            dfs(board, i - 1, j)
-            return
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">solve</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> board<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>board<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> i <span class="token operator">&lt;=</span> len<span class="token punctuation">(</span>board<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">or</span> <span class="token operator">not</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> j <span class="token operator">&lt;=</span> len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">or</span> board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'O'</span> <span class="token punctuation">:</span>
+                <span class="token keyword">return</span>
+            board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'F'</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
 
-        for j in range(len(board[0])):
-            dfs(board, 0, j)
-            dfs(board, len(board) - 1, j)
-        for i in range(len(board)):
-            dfs(board, i, 0)
-            dfs(board, i, len(board[0]) - 1)
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> len<span class="token punctuation">(</span>board<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>board<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>board<span class="token punctuation">,</span> i<span class="token punctuation">,</span> len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
 
-        for i in range(1, len(board) - 1):
-            for j in range(1, len(board[0]) - 1):
-                if board[i][j] == 'O':
-                    board[i][j] = 'X'
-
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                if board[i][j] == 'F':
-                    board[i][j] = 'O'
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>board<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'O'</span><span class="token punctuation">:</span>
+                    board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'X'</span>
+        
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>board<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'F'</span><span class="token punctuation">:</span>
+                    board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'O'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="417-太平洋大西洋水流问题"><a href="#417-太平洋大西洋水流问题" class="headerlink" title="417. 太平洋大西洋水流问题"></a>417. 太平洋大西洋水流问题</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pacific-atlantic-water-flow/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <img src="/2022/04/08/leetcode/sou-suo/6.jpg" class="" title="题目例图">
+
 <p>这题从正面强行做出比较困难，至少我是失败了，需要考虑的问题实在是太多了。<br>逆向思考一下或许更好。</p>
 <blockquote>
-<p>输入: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]<br>输出: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]</p>
+<p>输入: heights &#x3D; [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]<br>输出: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]</p>
 </blockquote>
 <h5 id="普通DFS题解-3"><a href="#普通DFS题解-3" class="headerlink" title="普通DFS题解"></a>普通DFS题解</h5><p>具体思路是分别从大西洋和太平洋开始，让水从低往高流。<br>从大西洋开始可以流到的所有地方都做一个标记，从太平洋开始可以流到的地方也做一个不同的标记，最后遍历整个小岛，两种标记都有的地方就是我们想要的地方。<br><code>note: 这里的流到指的是水往高处流！</code></p>
 <img src="/2022/04/08/leetcode/sou-suo/7.png" class="" title="题解示意图a">
 <img src="/2022/04/08/leetcode/sou-suo/8.png" class="" title="题解示意图b">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        n = len(heights)
-        m = len(heights[0])
-        ao = [[0] * m for _ in range(n)]
-        po = [[0] * m for _ in range(n)]
-        def isValid(x, y):
-            if 0 <= x <= n-1 and 0 <= y <= m-1:
-                return True
-            return False
 
-        def dfs(heights, x, y, flag):
-            if visited[x][y] == 1:
-                return
-            visited[x][y] = 1
-            if flag == True:
-                ao[x][y] = 1
-            else:
-                po[x][y] = 1
-            for nx, ny in [(x,y+1), (x,y-1), (x+1,y), (x-1,y)]:
-                if not isValid(nx, ny) or heights[nx][ny] < heights[x][y]:
-                    continue
-                dfs(heights, nx, ny, flag)
-            return
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">pacificAtlantic</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> heights<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        n <span class="token operator">=</span> len<span class="token punctuation">(</span>heights<span class="token punctuation">)</span>
+        m <span class="token operator">=</span> len<span class="token punctuation">(</span>heights<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        ao <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        po <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> x <span class="token operator">&lt;=</span> n<span class="token number">-1</span> <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> y <span class="token operator">&lt;=</span> m<span class="token number">-1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
 
-        visited = [[0] * m for _ in range(n)]
-        for y in range(m):
-            dfs(heights, 0, y, True)
-        for x in range(n):
-            dfs(heights, x, 0, True)
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>heights<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> visited<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span>
+            visited<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> flag <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                ao<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                po<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">for</span> nx<span class="token punctuation">,</span> ny <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token number">-1</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token operator">not</span> isValid<span class="token punctuation">(</span>nx<span class="token punctuation">,</span> ny<span class="token punctuation">)</span> <span class="token operator">or</span> heights<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">&lt;</span> heights<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    <span class="token keyword">continue</span>
+                dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> nx<span class="token punctuation">,</span> ny<span class="token punctuation">,</span> flag<span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
 
-        visited = [[0] * m for _ in range(n)]
-        for y in range(m):
-            dfs(heights, n-1, y, False)
-        for x in range(n):
-            dfs(heights, x, m-1, False)
-        res = []
-        for x in range(n):
-            for y in range(m):
-                if po[x][y] == 1 and ao[x][y] == 1:
-                    res.append([x, y])
+        visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
 
-        return res
+        visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> x<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> po<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> ao<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-Backtracking"><a href="#3-Backtracking" class="headerlink" title="3 Backtracking"></a>3 Backtracking</h3><h4 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17. 电话号码的字母组合"></a>17. 电话号码的字母组合</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 
+
 <p>这题是典型的排列组合问题，递归+回溯！</p>
 <blockquote>
-<p>输入：digits = “23”<br>输出：[“ad”,”ae”,”af”,”bd”,”be”,”bf”,”cd”,”ce”,”cf”]</p>
+<p>输入：digits &#x3D; “23”<br>输出：[“ad”,”ae”,”af”,”bd”,”be”,”bf”,”cd”,”ce”,”cf”]</p>
 </blockquote>
 <h5 id="回溯DFS题解"><a href="#回溯DFS题解" class="headerlink" title="回溯DFS题解"></a>回溯DFS题解</h5><p>具体思路略，这里可以把list()当栈用。</p>
 <img src="/2022/04/08/leetcode/sou-suo/10.png" class="" title="题解示意图">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
-        if digits == "":
-            return []
-        phone = &#123;'2':['a','b','c'],
-                 '3':['d','e','f'],
-                 '4':['g','h','i'],
-                 '5':['j','k','l'],
-                 '6':['m','n','o'],
-                 '7':['p','q','r','s'],
-                 '8':['t','u','v'],
-                 '9':['w','x','y','z']&#125;
-        res = list()
-        res_all = list()
-        def dfs(step):
-            if step == len(digits):
-                res_all.append(''.join(res))
-                return
-            for ch in phone[digits[step]]:
-                res.append(ch)
-                dfs(step+1)
-                res.pop()
-            return
-        dfs(0)
-        return res_all
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> digits <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        phone <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'2':['a','b','c'],</span>
+                 <span class="token string">'3'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'4'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'5'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'j'</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token string">'l'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'6'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">'n'</span><span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'7'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token string">'q'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span><span class="token string">'s'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'8'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'t'</span><span class="token punctuation">,</span><span class="token string">'u'</span><span class="token punctuation">,</span><span class="token string">'v'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                 <span class="token string">'9'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'w'</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token string">'y'</span><span class="token punctuation">,</span><span class="token string">'z'</span><span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res_all <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> step <span class="token operator">==</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                res_all<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> ch <span class="token keyword">in</span> phone<span class="token punctuation">[</span>digits<span class="token punctuation">[</span>step<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
+                dfs<span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                res<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res_all
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="46-全排列"><a href="#46-全排列" class="headerlink" title="46. 全排列"></a>46. 全排列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>这题和上一题基本一样，是典型的排列组合问题，递归+回溯！</p>
 <blockquote>
-<p>输入：nums = [1,2,3]<br>输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
+<p>输入：nums &#x3D; [1,2,3]<br>输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
 </blockquote>
 <h5 id="回溯DFS题解-1"><a href="#回溯DFS题解-1" class="headerlink" title="回溯DFS题解"></a>回溯DFS题解</h5><p>具体思路略，这里可以把list()当栈用，用set()是为了加速执行<code>if num not in vis:</code>，这是确保每一层递归不会出现重复的数字。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
-        tmp = list()
-        res = list()
-        vis = set()
-        def dfs(step):
-            if step == len(nums):
-                res.append(list(tmp))
-                return
-            for num in nums:
-                if num not in vis:
-                    tmp.append(num)
-                    vis.add(num)
-                    dfs(step+1)
-                    tmp.pop()
-                    vis.remove(num)
-            return
-        dfs(0)
-        return res
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">permute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        vis <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> step <span class="token operator">==</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> num <span class="token operator">not</span> <span class="token keyword">in</span> vis<span class="token punctuation">:</span>
+                    tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+                    vis<span class="token punctuation">.</span>add<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+                    dfs<span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                    tmp<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    vis<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="77-组合"><a href="#77-组合" class="headerlink" title="77. 组合"></a>77. 组合</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combinations/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>需要进行一定优化的回溯问题。</p>
 <blockquote>
-<p>输入：n = 4, k = 2<br>输出：<br>[<br>  [2,4],<br>  [3,4],<br>  [2,3],<br>  [1,2],<br>  [1,3],<br>  [1,4],<br>]</p>
+<p>输入：n &#x3D; 4, k &#x3D; 2<br>输出：<br>[<br>  [2,4],<br>  [3,4],<br>  [2,3],<br>  [1,2],<br>  [1,3],<br>  [1,4],<br>]</p>
 </blockquote>
 <h5 id="回溯DFS题解-2"><a href="#回溯DFS题解-2" class="headerlink" title="回溯DFS题解"></a>回溯DFS题解</h5><p>优化过程：</p>
 <ol>
@@ -843,21 +853,22 @@
 </ol>
 <img src="/2022/04/08/leetcode/sou-suo/11.png" class="" title="普通回溯">
 <img src="/2022/04/08/leetcode/sou-suo/12.png" class="" title="优化回溯">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def combine(self, n: int, k: int) -> List[List[int]]:
-        tmp = list()
-        res = list()
-        def dfs(step, nn):
-            if step == k:
-                res.append(list(tmp))
-                return
-            for num in range(nn + 1, n - (k - step) + 1 + 1): //剪枝优化
-                tmp.append(num)
-                dfs(step+1, num)
-                tmp.pop()
-            return
-        dfs(0, 0)
-        return res
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">combine</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">,</span> k<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token punctuation">,</span> nn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> step <span class="token operator">==</span> k<span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> num <span class="token keyword">in</span> range<span class="token punctuation">(</span>nn <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token punctuation">(</span>k <span class="token operator">-</span> step<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token operator">//</span>剪枝优化
+                tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+                dfs<span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+                tmp<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
@@ -1409,7 +1420,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.7k</span>&nbsp;字
+                class="white-color">14.2k</span>&nbsp;字
             
 
             <br>
@@ -1700,3 +1711,4 @@
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
 <script type="text/javascript" src="/js/fireworks.js"></script>
+

@@ -426,14 +426,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -460,59 +460,61 @@
 <p>难度: <code>中等</code></p>
 <p>很多人做这个题目想不到正确的 O(N)解法，即使看了答案理解了，下次再做的时候还是会忘记。要想真正理解这道题，就要明白解法背后的道理。这样不仅可以记住这道题，还能举一反三解决类似的题目。</p>
 <blockquote>
-<p>输入: g = [1,2,3], s = [1,1]<br>输出: 1<br>解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。<br>虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。<br>所以你应该输出1。</p>
+<p>输入: g &#x3D; [1,2,3], s &#x3D; [1,1]<br>输出: 1<br>解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。<br>虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。<br>所以你应该输出1。</p>
 </blockquote>
 <h5 id="双指针题解"><a href="#双指针题解" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>使用双指针，一个指针指向值较小的元素，一个指针指向值较大的元素。指向较小元素的指针从头向尾遍历，指向较大元素的指针从尾向头遍历。</p>
 <ul>
-<li>如果两个指针指向元素的和 sum == target，那么得到要求的结果；</li>
+<li>如果两个指针指向元素的和 sum &#x3D;&#x3D; target，那么得到要求的结果；</li>
 <li>如果 sum &gt; target，移动较大的元素，使 sum 变小一些；</li>
 <li>如果 sum &lt; target，移动较小的元素，使 sum 变大一些。</li>
 </ul>
 <p>数组中的元素最多遍历一次，时间复杂度为 O(N)。只使用了两个额外变量，空间复杂度为 O(1)。</p>
 <img src="/2022/03/27/leetcode/shuang-zhi-zhen/1.gif" class="" title="搜索空间">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        left = 0
-        right = len(numbers) - 1
-        while left < right :
-            total = numbers[left] + numbers[right]
-            if total > target :
-                right -= 1
-            elif total < target:
-                left += 1
-            else :
-                return [left+1,right+1]
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> numbers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        right <span class="token operator">=</span> len<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token punctuation">:</span>
+            total <span class="token operator">=</span> numbers<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">+</span> numbers<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+            <span class="token keyword">if</span> total <span class="token operator">></span> target <span class="token punctuation">:</span>
+                right <span class="token operator">-=</span> <span class="token number">1</span>
+            <span class="token keyword">elif</span> total <span class="token operator">&lt;</span> target<span class="token punctuation">:</span>
+                left <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span> <span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">[</span>left<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="633-平方数之和"><a href="#633-平方数之和" class="headerlink" title="633. 平方数之和"></a>633. 平方数之和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <blockquote>
-<p>输入：c = 5<br>输出：true<br>解释：1 <em> 1 + 2 </em> 2 = 5</p>
+<p>输入：c &#x3D; 5<br>输出：true<br>解释：1 * 1 + 2 * 2 &#x3D; 5</p>
 </blockquote>
 <h5 id="贪心题解"><a href="#贪心题解" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>可以看成是在元素为 0~target 的有序数组中查找两个数，使得这两个数的平方和为 target，如果能找到，则返回 true，表示 target 是两个整数的平方和。</p>
 <p>本题和 167 类似，只有一个明显区别：一个是和为 target，一个是平方和为 target。本题同样可以使用双指针得到两个数，使其平方和为 target。</p>
 <p>本题的关键是右指针的初始化，实现剪枝，从而降低时间复杂度。设右指针为 x，左指针固定为 0，为了使 0^2 + x^2 的值尽可能接近 target，我们可以将 x 取为 sqrt(target)。</p>
 <p>因为最多只需要遍历一次 0~sqrt(target)，所以时间复杂度为 O(sqrt(target))。又因为只使用了两个额外的变量，因此空间复杂度为 O(1)。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def judgeSquareSum(self, c: int) -> bool:
-        left = 0
-        right = sqrt(c)
-        while left <= right :
-            print(left,right)
-            total = left**2 + right**2
-            print(total)
-            if total > c :
-                right -= 1
-            elif total < c :
-                left += 1
-            else :
-                return True
-        return False
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">judgeSquareSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> c<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        right <span class="token operator">=</span> sqrt<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right <span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+            total <span class="token operator">=</span> left<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> right<span class="token operator">**</span><span class="token number">2</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> total <span class="token operator">></span> c <span class="token punctuation">:</span>
+                right <span class="token operator">-=</span> <span class="token number">1</span>
+            <span class="token keyword">elif</span> total <span class="token operator">&lt;</span> c <span class="token punctuation">:</span>
+                left <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span> <span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="345-反转字符串中的元音字母"><a href="#345-反转字符串中的元音字母" class="headerlink" title="345. 反转字符串中的元音字母"></a>345. 反转字符串中的元音字母</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
 <img src="/2022/03/27/leetcode/shuang-zhi-zhen/2.png" class="" title="题意">
+
 <blockquote>
-<p>输入：s = “hello”<br>输出：”holle”</p>
+<p>输入：s &#x3D; “hello”<br>输出：”holle”</p>
 </blockquote>
 <h5 id="双指针题解-1"><a href="#双指针题解-1" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>使用双指针，一个指针从头向尾遍历，一个指针从尾到头遍历，当两个指针都遍历到元音字符时，交换这两个元音字符。</p>
 <p>为了快速判断一个字符是不是元音字符，我们将全部元音字符添加到集合 HashSet 中，从而以 O(1) 的时间复杂度进行该操作。</p>
@@ -521,67 +523,70 @@
 <li>空间复杂度 O(1)：只需要使用两个额外变量</li>
 </ul>
 <img src="/2022/03/27/leetcode/shuang-zhi-zhen/3.gif" class="" title="题解示意">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def reverseVowels(self, s: str) -> str:
-        s1 = list(s)
-        print(s1)
-        yy = ['a','e','i','o','u','A','E','I','O','U']
-        left = 0
-        right = len(s1) - 1
-        while left < right :
-            while s1[left] not in yy and left < right:
-                left += 1
-            while s1[right] not in yy and left < right:
-                right -= 1
-            temp = s1[left]
-            s1[left] = s1[right]
-            s1[right] = temp
-            left += 1
-            right -= 1
-        return ''.join(s1)
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseVowels</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> str<span class="token punctuation">:</span>
+        s1 <span class="token operator">=</span> list<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
+        yy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">,</span><span class="token string">'u'</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'E'</span><span class="token punctuation">,</span><span class="token string">'I'</span><span class="token punctuation">,</span><span class="token string">'O'</span><span class="token punctuation">,</span><span class="token string">'U'</span><span class="token punctuation">]</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        right <span class="token operator">=</span> len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token punctuation">:</span>
+            <span class="token keyword">while</span> s1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> yy <span class="token operator">and</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+                left <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">while</span> s1<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> yy <span class="token operator">and</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+                right <span class="token operator">-=</span> <span class="token number">1</span>
+            temp <span class="token operator">=</span> s1<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+            s1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> s1<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+            s1<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+            left <span class="token operator">+=</span> <span class="token number">1</span>
+            right <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="680-验证回文字符串-Ⅱ"><a href="#680-验证回文字符串-Ⅱ" class="headerlink" title="680. 验证回文字符串 Ⅱ"></a>680. 验证回文字符串 Ⅱ</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-palindrome-ii/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
 <p>所谓的回文字符串，是指具有左右对称特点的字符串，例如 “abcba” 就是一个回文字符串。</p>
 <p>使用双指针可以很容易判断一个字符串是否是回文字符串：令一个指针从左到右遍历，一个指针从右到左遍历，这两个指针同时移动一个位置，每次都判断两个指针指向的字符是否相同，如果都相同，字符串才是具有左右对称性质的回文字符串。</p>
 <img src="/2022/03/27/leetcode/shuang-zhi-zhen/4.gif" class="" title="题意">
+
 <blockquote>
-<p>输入: s = “aba”<br>输出: true</p>
+<p>输入: s &#x3D; “aba”<br>输出: true</p>
 </blockquote>
 <h5 id="双指针题解-2"><a href="#双指针题解-2" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>本题的关键是处理删除一个字符。在使用双指针遍历字符串时，如果出现两个指针指向的字符不相等的情况，我们就试着删除一个字符，再判断删除完之后的字符串是否是回文字符串。</p>
 <p>在判断是否为回文字符串时，我们不需要判断整个字符串，因为左指针左边和右指针右边的字符之前已经判断过具有对称性质，所以只需要判断中间的子字符串即可。</p>
 <p>在试着删除字符时，我们既可以删除左指针指向的字符，也可以删除右指针指向的字符。</p>
 <img src="/2022/03/27/leetcode/shuang-zhi-zhen/5.gif" class="" title="题解示意">
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def validPalindrome(self, s: str) -> bool:
-        l=0
-        r=len(s)-1
-        if s == s[::-1]:
-            return True
-        while l<r:
-            if s[l]==s[r]:
-                l+=1
-                r-=1
-            else:
-                return s[l:r] == s[l:r][::-1] or s[l+1:r+1] == s[l+1:r+1][::-1]
-        return True
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">validPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        l<span class="token operator">=</span><span class="token number">0</span>
+        r<span class="token operator">=</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+        <span class="token keyword">if</span> s <span class="token operator">==</span> s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> s<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">==</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                r<span class="token operator">-=</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> s<span class="token punctuation">[</span>l<span class="token punctuation">:</span>r<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>l<span class="token punctuation">:</span>r<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">or</span> s<span class="token punctuation">[</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="524-通过删除字母匹配到字典里最长单词"><a href="#524-通过删除字母匹配到字典里最长单词" class="headerlink" title="524. 通过删除字母匹配到字典里最长单词"></a>524. 通过删除字母匹配到字典里最长单词</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>删除 s 中的一些字符，使得它构成字符串列表 d 中的一个字符串，找出能构成的最长字符串。如果有多个相同长度的结果，返回字典序的最小字符串。</p>
 <blockquote>
-<p>输入：s = “abpcplea”, dictionary = [“ale”,”apple”,”monkey”,”plea”]<br>输出：”apple”</p>
+<p>输入：s &#x3D; “abpcplea”, dictionary &#x3D; [“ale”,”apple”,”monkey”,”plea”]<br>输出：”apple”</p>
 </blockquote>
 <h5 id="双指针题解-3"><a href="#双指针题解-3" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>通过删除字符串 s 中的一个字符能得到字符串 t，可以认为 t 是 s 的子序列，我们可以使用双指针来判断一个字符串是否为另一个字符串的子序列。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        res = 0
-        tmp = prices[0]
-        for p in prices:
-            if p > tmp:
-                res += p - tmp
-            tmp = p
-        return res
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prices<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        res <span class="token operator">=</span> <span class="token number">0</span>
+        tmp <span class="token operator">=</span> prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> p <span class="token keyword">in</span> prices<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> p <span class="token operator">></span> tmp<span class="token punctuation">:</span>
+                res <span class="token operator">+=</span> p <span class="token operator">-</span> tmp
+            tmp <span class="token operator">=</span> p
+        <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
@@ -1122,7 +1127,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.7k</span>&nbsp;字
+                class="white-color">14.2k</span>&nbsp;字
             
 
             <br>
@@ -1413,3 +1418,4 @@
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
 <script type="text/javascript" src="/js/fireworks.js"></script>
+
