@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    10 分
                 </div>
                 
 
@@ -484,21 +484,21 @@
 <p>当然也可以偶先考虑满足胃口大的小孩。</p>
 <p>不能把小尺寸的给大胃口的吃，因为吃不饱。<br>也不能把大尺寸的给小尺寸的吃，因为浪费。</p>
 <p>优先满足胃口小的小孩code，注释部分为优先考虑胃口大的。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findContentChildren</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> g<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        g<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#g.sort(reverse=True)</span>
-        s<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#s.sort(reverse=True)</span>
-        g_i <span class="token operator">=</span> <span class="token number">0</span>
-        s_i <span class="token operator">=</span> <span class="token number">0</span>
-        sum <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">while</span> g_i <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>g<span class="token punctuation">)</span> <span class="token operator">and</span> s_i <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> g<span class="token punctuation">[</span>g_i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> s<span class="token punctuation">[</span>s_i<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                sum <span class="token operator">+=</span> <span class="token number">1</span>
-                g_i <span class="token operator">+=</span> <span class="token number">1</span>
-                s_i <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                s_i <span class="token operator">+=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true">#g_i += 1</span>
-        <span class="token keyword">return</span> sum
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        g.sort() #g.sort(reverse=True)
+        s.sort() #s.sort(reverse=True)
+        g_i = 0
+        s_i = 0
+        sum = 0
+        while g_i < len(g) and s_i < len(s):
+            if g[g_i] <= s[s_i]:
+                sum += 1
+                g_i += 1
+                s_i += 1
+            else:
+                s_i += 1 #g_i += 1
+        return sum
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="435-无重叠区间"><a href="#435-无重叠区间" class="headerlink" title="435. 无重叠区间"></a>435. 无重叠区间</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
@@ -508,18 +508,17 @@
 </blockquote>
 <h5 id="贪心题解-1"><a href="#贪心题解-1" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如图所示：</p>
 <img src="/2022/04/01/leetcode/tan-xin-si-xiang/0.png" class="" title="思路图">
-
 <p>其实，这题就是<code>会议预定</code>类型的题，如果我们把本题的区间看成是会议，那么按照右端点排序，我们一定能够找到一个最先结束的会议。而这个会议一定是我们需要添加到最终结果的的首个会议。<br>所以我们要使用左区间排序（当然其实右区间也是可以的，不过就是从右往左遍历而已（md，为何多此一举））</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">eraseOverlapIntervals</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        sum <span class="token operator">=</span> <span class="token number">0</span>
-        right <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">60000</span>
-        intervals<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token keyword">lambda</span> c<span class="token punctuation">:</span> <span class="token punctuation">(</span>c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> L <span class="token keyword">in</span> intervals<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> L<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">>=</span> right<span class="token punctuation">:</span>
-                 sum <span class="token operator">+=</span> <span class="token number">1</span>
-                 right <span class="token operator">=</span> L<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span> <span class="token operator">-</span> sum
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        sum = 0
+        right = -60000
+        intervals.sort(key = lambda c: (c[1]), reverse=False)
+        for L in intervals:
+            if L[0] >= right:
+                 sum += 1
+                 right = L[1]
+        return len(intervals) - sum
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="452-用最少数量的箭引爆气球"><a href="#452-用最少数量的箭引爆气球" class="headerlink" title="452. 用最少数量的箭引爆气球"></a>452. 用最少数量的箭引爆气球</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
@@ -528,16 +527,16 @@
 <p>输入：points = [[10,16],[2,8],[1,6],[7,12]]<br>输出：2<br>解释：气球可以用2支箭来爆破:<br>-在x = 6处射出箭，击破气球[2,8]和[1,6]。<br>-在x = 11处发射箭，击破气球[10,16]和[7,12]。</p>
 </blockquote>
 <h5 id="贪心题解-2"><a href="#贪心题解-2" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路略。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findMinArrowShots</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> points<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        points<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span> <span class="token keyword">lambda</span> c<span class="token punctuation">:</span> <span class="token punctuation">(</span>c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>reverse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-        right <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span> <span class="token operator">-</span> <span class="token number">1</span>
-        sum <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> p <span class="token keyword">in</span> points<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">></span> right<span class="token punctuation">:</span>
-                right <span class="token operator">=</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-                sum <span class="token operator">+=</span> <span class="token number">1</span>
-        <span class="token keyword">return</span> sum
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def findMinArrowShots(self, points: List[List[int]]) -> int:
+        points.sort(key= lambda c: (c[1]),reverse=False)
+        right = -2**31 - 1
+        sum = 0
+        for p in points:
+            if p[0] > right:
+                right = p[1]
+                sum += 1
+        return sum
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="406-根据身高重建队列"><a href="#406-根据身高重建队列" class="headerlink" title="406. 根据身高重建队列"></a>406. 根据身高重建队列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
@@ -553,13 +552,13 @@
 <li>第二个数字，第二优先级排序，由低到高，当身高一样的时候，人数少的就应该放前面（正确性保障）<br>先安排身高最高且前面人最少的站好。<br>然后从左到右依次插入，插入位置为其第2项，即有多少人在他前面。<br>[[7, 0], [7, 1], [6, 1], [5, 0], [5, 2], [4, 4]]</li>
 </ul>
 <p>[7, 0]<br>[7, 0], [7, 1]<br>[7, 0], [6, 1], [7, 1],<br>[5, 0], [7, 0], [7, 1], [6, 1]<br>[5, 0], [7, 0], [5, 2], [7, 1], [6, 1]<br>[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">reconstructQueue</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> people<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        people<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token keyword">lambda</span> c <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token operator">-</span>c<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> reverse <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> p <span class="token keyword">in</span> people <span class="token punctuation">:</span>
-            res<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>p<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
+        people.sort(key = lambda c : (-c[0],c[1]), reverse = False)
+        res = []
+        for p in people :
+            res.insert(p[1],p)
+        return res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121. 买卖股票的最佳时机"></a>121. 买卖股票的最佳时机</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
@@ -572,36 +571,35 @@
 <li>当前最大收益 = max(已知最大收益, 当前价 - 前面已被记录的最低价)<br>over.</li>
 </ul>
 <img src="/2022/04/01/leetcode/tan-xin-si-xiang/1.gif" class="" title="给个别人做的图吧">
-
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prices<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        res <span class="token operator">=</span> <span class="token number">0</span>
-        mip <span class="token operator">=</span> prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>prices<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            p <span class="token operator">=</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-            <span class="token keyword">if</span> p <span class="token operator">&lt;</span> mip <span class="token punctuation">:</span>
-                mip <span class="token operator">=</span> p
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                res <span class="token operator">=</span> max<span class="token punctuation">(</span>res<span class="token punctuation">,</span>p<span class="token operator">-</span>mip<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        res = 0
+        mip = prices[0]
+        for i in range(1,len(prices)):
+            p = prices[i]
+            if p < mip :
+                mip = p
+            else:
+                res = max(res,p-mip)
+        return res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="122-买卖股票的最佳时机-II"><a href="#122-买卖股票的最佳时机-II" class="headerlink" title="122. 买卖股票的最佳时机 II"></a>122. 买卖股票的最佳时机 II</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
 <p>上一题的升级版！别人恐惧我贪婪，别人贪婪我恐惧！</p>
 <p><code>note：你在任何时候 最多 只能持有 一股 股票。你也可以购买它，然后在 同一天 出售。</code></p>
 <blockquote>
-<p>输入: prices = [7,1,5,3,6,4]<br>输出: 7<br>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</p>
+<p>输入: prices = [7,1,5,3,6,4]<br>输出: 7<br>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</p>
 </blockquote>
 <h5 id="贪心题解-5"><a href="#贪心题解-5" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>尽量的频繁交易，第一天买第二天就卖，不能拖！当然这是要建立在第二天价格高于第一天的前提下。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prices<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        res <span class="token operator">=</span> <span class="token number">0</span>
-        tmp <span class="token operator">=</span> prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> p <span class="token keyword">in</span> prices<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> p <span class="token operator">></span> tmp<span class="token punctuation">:</span>
-                res <span class="token operator">+=</span> p <span class="token operator">-</span> tmp
-            tmp <span class="token operator">=</span> p
-        <span class="token keyword">return</span> res
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        res = 0
+        tmp = prices[0]
+        for p in prices:
+            if p > tmp:
+                res += p - tmp
+            tmp = p
+        return res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="605-种花问题"><a href="#605-种花问题" class="headerlink" title="605. 种花问题"></a>605. 种花问题</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/can-place-flowers/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
@@ -610,31 +608,31 @@
 <p>输入：flowerbed = [1,0,0,0,1], n = 1<br>输出：true</p>
 </blockquote>
 <h5 id="贪心题解-6"><a href="#贪心题解-6" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>能种就种。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">canPlaceFlowers</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> flowerbed<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
-        res <span class="token operator">=</span> <span class="token number">0</span>
-        l <span class="token operator">=</span> len<span class="token punctuation">(</span>flowerbed<span class="token punctuation">)</span>
-        i <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>flowerbed<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> flowerbed<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-                <span class="token keyword">continue</span>
-            <span class="token keyword">if</span> l <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> flowerbed<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                res <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> flowerbed<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
-                res <span class="token operator">+=</span> <span class="token number">1</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> i <span class="token operator">==</span> l <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">and</span> flowerbed<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
-                res <span class="token operator">+=</span> <span class="token number">1</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> flowerbed<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">1</span> <span class="token operator">and</span> flowerbed<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
-                res <span class="token operator">+=</span> <span class="token number">1</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-            i <span class="token operator">+=</span> <span class="token number">1</span>
-        <span class="token keyword">if</span> n <span class="token operator">&lt;=</span> res<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">True</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">False</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+        res = 0
+        l = len(flowerbed)
+        i = 0
+        while i < len(flowerbed):
+            if flowerbed[i] == 1:
+                i += 1
+                continue
+            if l == 1 and flowerbed[0] == 0:
+                res += 1
+            elif i == 0 and flowerbed[i+1] != 1:
+                res += 1
+                i += 1
+            elif i == l - 1 and flowerbed[i-1] != 1:
+                res += 1
+                i += 1
+            elif flowerbed[i-1] != 1 and flowerbed[i+1] != 1:
+                res += 1
+                i += 1
+            i += 1
+        if n <= res:
+            return True
+        else:
+            return False
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="665-非递减数列"><a href="#665-非递减数列" class="headerlink" title="665. 非递减数列"></a>665. 非递减数列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-decreasing-array/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
@@ -662,20 +660,20 @@
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">checkPossibility</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
-        length <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        cnt <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                cnt <span class="token operator">+=</span> <span class="token number">1</span>
-                <span class="token keyword">if</span> cnt <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token boolean">False</span>
-                <span class="token keyword">if</span> i <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> 
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def checkPossibility(self, nums: List[int]) -> bool:
+        length = len(nums)
+        cnt = 0
+        for i in range(length - 1):
+            if nums[i] > nums[i + 1]:
+                cnt += 1
+                if cnt == 2:
+                    return False
+                if i != 0 and nums[i - 1] > nums[i + 1]:
+                    nums[i + 1] = nums[i] 
+                else:
+                    nums[i] = nums[i + 1]
+        return True
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/description/">leetcode</a></p>
 <p>难度: <code>简单</code></p>
@@ -684,68 +682,72 @@
 <p>输入：nums = [-2,1,-3,4,-1,2,1,-5,4]<br>输出：6<br>解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</p>
 </blockquote>
 <h5 id="贪心题解-8"><a href="#贪心题解-8" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>重点在<code>nums[i] += max(nums[i-1], 0)</code><br>要么nums[i] = nums[i] + nums[i-1] 前一项大于0，能让他变大<br>要么nums[i] = nums[i] 前一项不大于0，不能让他变大</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">遍历序号</th>
-<th align="center">nums</th>
-<th align="center">res</th>
+<th style="text-align:center">遍历序号</th>
+<th style="text-align:center">nums</th>
+<th style="text-align:center">res</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">[-2, 1, -3, 4, -1, 2, 1, -5, 4]</td>
-<td align="center">-2</td>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">[-2, 1, -3, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">-2</td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="center">[-2, 1, -3, 4, -1, 2, 1, -5, 4]</td>
-<td align="center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">[-2, 1, -3, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">[-2, 1, -2, 4, -1, 2, 1, -5, 4]</td>
-<td align="center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">[-2, 1, -2, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">[-2, 1, -2, 4, -1, 2, 1, -5, 4]</td>
-<td align="center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">[-2, 1, -2, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">4</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">[-2, 1, -2, 4, 3, 2, 1, -5, 4]</td>
-<td align="center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 2, 1, -5, 4]</td>
+<td style="text-align:center">4</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">[-2, 1, -2, 4, 3, 5, 1, -5, 4]</td>
-<td align="center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 1, -5, 4]</td>
+<td style="text-align:center">5</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">[-2, 1, -2, 4, 3, 5, 6, -5, 4]</td>
-<td align="center">6</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 6, -5, 4]</td>
+<td style="text-align:center">6</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">[-2, 1, -2, 4, 3, 5, 6, 1, 4]</td>
-<td align="center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 6, 1, 4]</td>
+<td style="text-align:center">6</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="center">[-2, 1, -2, 4, 3, 5, 6, 1, 5]</td>
-<td align="center">6</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 6, 1, 5]</td>
+<td style="text-align:center">6</td>
 </tr>
-</tbody></table>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        res <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> max<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> res<span class="token punctuation">:</span>
-                res <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-        <span class="token keyword">return</span> res
+</tbody>
+</table>
+</div>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        res = nums[0]
+        for i in range(1,len(nums)):
+            nums[i] += max(nums[i-1], 0)
+            if nums[i] > res:
+                res = nums[i]
+        return res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="763-划分字母区间"><a href="#763-划分字母区间" class="headerlink" title="763. 划分字母区间"></a>763. 划分字母区间</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
@@ -754,30 +756,30 @@
 <p>输入：S = “ababcbacadefegdehijhklij”<br>输出：[9,7,8]<br>解释：<br>划分结果为 “ababcbaca”, “defegde”, “hijhklij”。<br>每个字母最多出现在一个片段中。<br>像 “ababcbacadefegde”, “hijhklij” 的划分是错误的，因为划分的片段数较少。</p>
 </blockquote>
 <h5 id="贪心题解-9"><a href="#贪心题解-9" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>首先呢，用字典记录所有出现字母的<code>出现位置start</code>和<code>消失位置end</code><br>然后呢，把所有的[start, end]组成一个新数组[[start0, end0], [start1, end1], …, [startN, endN]]，不用特意去排序，因为上一步找出来的[start, end]本来就是按start从小到大排序的<br>再后呢，开始遍历了，如果当前节点的start_i落在了前一个节点的[start_i-1, end_i-1]里面，就说明两个点重叠了，一旦发现这个条件不成立，就将<code>end - start + 1</code>加入结果，然后更新start和end。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">partitionLabels</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        hmpend <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
-        hmpstart <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> hmpstart<span class="token punctuation">:</span>
-                hmpstart<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
-            hmpend<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
-        dlist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> k <span class="token keyword">in</span> hmpstart<span class="token punctuation">:</span>
-            dlist<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>hmpstart<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span>hmpend<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># dlist.sort(key=lambda c:(c[0],c[1])) # 其实并不需要排序</span>
-        start <span class="token operator">=</span> <span class="token number">0</span>
-        end <span class="token operator">=</span> <span class="token number">0</span>
-        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> dl <span class="token keyword">in</span> dlist<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> start <span class="token operator">&lt;=</span> dl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">and</span> dl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> end<span class="token punctuation">:</span>
-                end <span class="token operator">=</span> max<span class="token punctuation">(</span>end<span class="token punctuation">,</span> dl<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>end <span class="token operator">-</span> start <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-                start <span class="token operator">=</span> dl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-                end <span class="token operator">=</span> dl<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>end <span class="token operator">-</span> start <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        hmpend = &#123;&#125;
+        hmpstart = &#123;&#125;
+        for i in range(len(s)):
+            if s[i] not in hmpstart:
+                hmpstart[s[i]] = i
+            hmpend[s[i]] = i
+        dlist = []
+        for k in hmpstart:
+            dlist.append([hmpstart[k],hmpend[k]])
+        # dlist.sort(key=lambda c:(c[0],c[1])) # 其实并不需要排序
+        start = 0
+        end = 0
+        res = []
+        for dl in dlist:
+            if start <= dl[0] and dl[0] <= end:
+                end = max(end, dl[1])
+            else:
+                res.append(end - start + 1)
+                start = dl[0]
+                end = dl[1]
+        res.append(end - start + 1)
+        return res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
@@ -1116,13 +1118,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/">
+                <a href="/2022/04/01/leetcode/shuang-zhi-zhen/345.fan-zhuan-zi-fu-chuan-zhong-de-yuan-yin-zi-mu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="524. 通过删除字母匹配到字典里最长单词">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="345. 反转字符串中的元音字母">
                         
-                        <span class="card-title">524. 通过删除字母匹配到字典里最长单词</span>
+                        <span class="card-title">345. 反转字符串中的元音字母</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1329,7 +1331,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.3k</span>&nbsp;字
+                class="white-color">9.1k</span>&nbsp;字
             
 
             <br>
@@ -1608,6 +1610,22 @@
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":250,"height":250,"position":"right","hOffset":20,"vOffset":0},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2},"log":false});</script></body>
 
