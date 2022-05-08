@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="524. 通过删除字母匹配到字典里最长单词, ECNU BigData Key-Value Storage shiftrain">
+    <meta name="keywords" content="刷爆leetcode：双指针, ECNU BigData Key-Value Storage shiftrain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>524. 通过删除字母匹配到字典里最长单词 | shiftrain&#39;s blog</title>
+    <title>刷爆leetcode：双指针 | shiftrain&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,7 +272,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">524. 通过删除字母匹配到字典里最长单词</h1>
+                    <h1 class="description center-align post-title">刷爆leetcode：双指针</h1>
                 </div>
             </div>
         </div>
@@ -413,7 +413,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-01
+                    2022-03-27
                 </div>
                 
 
@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    9 分
                 </div>
                 
 
@@ -450,7 +450,316 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="222"><a href="#222" class="headerlink" title="222"></a>222</h2><h2 id=""><a href="#" class="headerlink" title="#"></a>#</h2><h2 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h2>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="1-双指针-double-pointer"><a href="#1-双指针-double-pointer" class="headerlink" title="1 双指针(double pointer)"></a>1 双指针(double pointer)</h3><p>双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。（over）<br>这部分虽然没有参考cyc的思路，但是由于之前没来及写博客，所以题解思路就参考cyc的了（<a target="_blank" rel="noopener" href="http://www.cyc2018.xyz/%E7%AE%97%E6%B3%95/Leetcode%20%E9%A2%98%E8%A7%A3/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.html#_1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">cyc链接</a>）</p>
+<p>当然，可能也会造成思路和代码不符的情况，有空慢慢改！</p>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="1-就普通双指针啊"><a href="#1-就普通双指针啊" class="headerlink" title="1 就普通双指针啊"></a>1 就普通双指针啊</h3><h4 id="167-两数之和-II-输入有序数组"><a href="#167-两数之和-II-输入有序数组" class="headerlink" title="167. 两数之和 II - 输入有序数组"></a>167. 两数之和 II - 输入有序数组</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>很多人做这个题目想不到正确的 O(N)解法，即使看了答案理解了，下次再做的时候还是会忘记。要想真正理解这道题，就要明白解法背后的道理。这样不仅可以记住这道题，还能举一反三解决类似的题目。</p>
+<blockquote>
+<p>输入: g = [1,2,3], s = [1,1]<br>输出: 1<br>解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。<br>虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。<br>所以你应该输出1。</p>
+</blockquote>
+<h5 id="双指针题解"><a href="#双指针题解" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>使用双指针，一个指针指向值较小的元素，一个指针指向值较大的元素。指向较小元素的指针从头向尾遍历，指向较大元素的指针从尾向头遍历。</p>
+<ul>
+<li>如果两个指针指向元素的和 sum == target，那么得到要求的结果；</li>
+<li>如果 sum &gt; target，移动较大的元素，使 sum 变小一些；</li>
+<li>如果 sum &lt; target，移动较小的元素，使 sum 变大一些。</li>
+</ul>
+<p>数组中的元素最多遍历一次，时间复杂度为 O(N)。只使用了两个额外变量，空间复杂度为 O(1)。</p>
+<img src="/2022/03/27/leetcode/shuang-zhi-zhen/1.gif" class="" title="搜索空间">
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        left = 0
+        right = len(numbers) - 1
+        while left < right :
+            total = numbers[left] + numbers[right]
+            if total > target :
+                right -= 1
+            elif total < target:
+                left += 1
+            else :
+                return [left+1,right+1]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="633-平方数之和"><a href="#633-平方数之和" class="headerlink" title="633. 平方数之和"></a>633. 平方数之和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<blockquote>
+<p>输入：c = 5<br>输出：true<br>解释：1 <em> 1 + 2 </em> 2 = 5</p>
+</blockquote>
+<h5 id="贪心题解"><a href="#贪心题解" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>可以看成是在元素为 0~target 的有序数组中查找两个数，使得这两个数的平方和为 target，如果能找到，则返回 true，表示 target 是两个整数的平方和。</p>
+<p>本题和 167 类似，只有一个明显区别：一个是和为 target，一个是平方和为 target。本题同样可以使用双指针得到两个数，使其平方和为 target。</p>
+<p>本题的关键是右指针的初始化，实现剪枝，从而降低时间复杂度。设右指针为 x，左指针固定为 0，为了使 0^2 + x^2 的值尽可能接近 target，我们可以将 x 取为 sqrt(target)。</p>
+<p>因为最多只需要遍历一次 0~sqrt(target)，所以时间复杂度为 O(sqrt(target))。又因为只使用了两个额外的变量，因此空间复杂度为 O(1)。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        left = 0
+        right = sqrt(c)
+        while left <= right :
+            print(left,right)
+            total = left**2 + right**2
+            print(total)
+            if total > c :
+                right -= 1
+            elif total < c :
+                left += 1
+            else :
+                return True
+        return False
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="345-反转字符串中的元音字母"><a href="#345-反转字符串中的元音字母" class="headerlink" title="345. 反转字符串中的元音字母"></a>345. 反转字符串中的元音字母</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/description/">leetcode</a></p>
+<p>难度: <code>简单</code></p>
+<img src="/2022/03/27/leetcode/shuang-zhi-zhen/2.png" class="" title="题意">
+<blockquote>
+<p>输入：s = “hello”<br>输出：”holle”</p>
+</blockquote>
+<h5 id="双指针题解-1"><a href="#双指针题解-1" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>使用双指针，一个指针从头向尾遍历，一个指针从尾到头遍历，当两个指针都遍历到元音字符时，交换这两个元音字符。</p>
+<p>为了快速判断一个字符是不是元音字符，我们将全部元音字符添加到集合 HashSet 中，从而以 O(1) 的时间复杂度进行该操作。</p>
+<ul>
+<li>时间复杂度为 O(N)：只需要遍历所有元素一次</li>
+<li>空间复杂度 O(1)：只需要使用两个额外变量</li>
+</ul>
+<img src="/2022/03/27/leetcode/shuang-zhi-zhen/3.gif" class="" title="题解示意">
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def reverseVowels(self, s: str) -> str:
+        s1 = list(s)
+        print(s1)
+        yy = ['a','e','i','o','u','A','E','I','O','U']
+        left = 0
+        right = len(s1) - 1
+        while left < right :
+            while s1[left] not in yy and left < right:
+                left += 1
+            while s1[right] not in yy and left < right:
+                right -= 1
+            temp = s1[left]
+            s1[left] = s1[right]
+            s1[right] = temp
+            left += 1
+            right -= 1
+        return ''.join(s1)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="680-验证回文字符串-Ⅱ"><a href="#680-验证回文字符串-Ⅱ" class="headerlink" title="680. 验证回文字符串 Ⅱ"></a>680. 验证回文字符串 Ⅱ</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-palindrome-ii/description/">leetcode</a></p>
+<p>难度: <code>简单</code></p>
+<p>所谓的回文字符串，是指具有左右对称特点的字符串，例如 “abcba” 就是一个回文字符串。</p>
+<p>使用双指针可以很容易判断一个字符串是否是回文字符串：令一个指针从左到右遍历，一个指针从右到左遍历，这两个指针同时移动一个位置，每次都判断两个指针指向的字符是否相同，如果都相同，字符串才是具有左右对称性质的回文字符串。</p>
+<img src="/2022/03/27/leetcode/shuang-zhi-zhen/4.gif" class="" title="题意">
+<blockquote>
+<p>输入: s = “aba”<br>输出: true</p>
+</blockquote>
+<h5 id="双指针题解-2"><a href="#双指针题解-2" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>本题的关键是处理删除一个字符。在使用双指针遍历字符串时，如果出现两个指针指向的字符不相等的情况，我们就试着删除一个字符，再判断删除完之后的字符串是否是回文字符串。</p>
+<p>在判断是否为回文字符串时，我们不需要判断整个字符串，因为左指针左边和右指针右边的字符之前已经判断过具有对称性质，所以只需要判断中间的子字符串即可。</p>
+<p>在试着删除字符时，我们既可以删除左指针指向的字符，也可以删除右指针指向的字符。</p>
+<img src="/2022/03/27/leetcode/shuang-zhi-zhen/5.gif" class="" title="题解示意">
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        l=0
+        r=len(s)-1
+        if s == s[::-1]:
+            return True
+        while l<r:
+            if s[l]==s[r]:
+                l+=1
+                r-=1
+            else:
+                return s[l:r] == s[l:r][::-1] or s[l+1:r+1] == s[l+1:r+1][::-1]
+        return True
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="524-通过删除字母匹配到字典里最长单词"><a href="#524-通过删除字母匹配到字典里最长单词" class="headerlink" title="524. 通过删除字母匹配到字典里最长单词"></a>524. 通过删除字母匹配到字典里最长单词</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>删除 s 中的一些字符，使得它构成字符串列表 d 中的一个字符串，找出能构成的最长字符串。如果有多个相同长度的结果，返回字典序的最小字符串。</p>
+<blockquote>
+<p>输入：s = “abpcplea”, dictionary = [“ale”,”apple”,”monkey”,”plea”]<br>输出：”apple”</p>
+</blockquote>
+<h5 id="双指针题解-3"><a href="#双指针题解-3" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>通过删除字符串 s 中的一个字符能得到字符串 t，可以认为 t 是 s 的子序列，我们可以使用双指针来判断一个字符串是否为另一个字符串的子序列。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        res = 0
+        tmp = prices[0]
+        for p in prices:
+            if p > tmp:
+                res += p - tmp
+            tmp = p
+        return res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="605-种花问题"><a href="#605-种花问题" class="headerlink" title="605. 种花问题"></a>605. 种花问题</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/can-place-flowers/description/">leetcode</a></p>
+<p>难度: <code>简单</code></p>
+<p>跳格子！</p>
+<blockquote>
+<p>输入：flowerbed = [1,0,0,0,1], n = 1<br>输出：true</p>
+</blockquote>
+<h5 id="贪心题解-1"><a href="#贪心题解-1" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>能种就种。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+        res = 0
+        l = len(flowerbed)
+        i = 0
+        while i < len(flowerbed):
+            if flowerbed[i] == 1:
+                i += 1
+                continue
+            if l == 1 and flowerbed[0] == 0:
+                res += 1
+            elif i == 0 and flowerbed[i+1] != 1:
+                res += 1
+                i += 1
+            elif i == l - 1 and flowerbed[i-1] != 1:
+                res += 1
+                i += 1
+            elif flowerbed[i-1] != 1 and flowerbed[i+1] != 1:
+                res += 1
+                i += 1
+            i += 1
+        if n <= res:
+            return True
+        else:
+            return False
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="665-非递减数列"><a href="#665-非递减数列" class="headerlink" title="665. 非递减数列"></a>665. 非递减数列</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-decreasing-array/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>我发现贪心思想都有点脑筋急转弯~</p>
+<blockquote>
+<p>输入: nums = [4,2,3]<br>输出: true<br>解释: 你可以通过把第一个 4 变成 1 来使得它成为一个非递减数列。</p>
+</blockquote>
+<h5 id="贪心题解-2"><a href="#贪心题解-2" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>本题是要维持一个非递减的数列，所以遇到递减的情况时（nums[i] &gt; nums[i + 1]），要么将前面的元素缩小，要么将后面的元素放大。</p>
+<p>但是本题唯一的易错点就在这:</p>
+<ul>
+<li>如果将nums[i]缩小，可能会导致其无法融入前面已经遍历过的非递减子数列；</li>
+<li>如果将nums[i + 1]放大，可能会导致其后续的继续出现递减；<br>所以要采取贪心的策略，在遍历时，每次需要看连续的三个元素，也就是瞻前顾后，遵循以下两个原则：</li>
+<li>需要尽可能不放大nums[i + 1]，这样会让后续非递减更困难；</li>
+<li>如果缩小nums[i]，但不破坏前面的子序列的非递减性；</li>
+</ul>
+<p>算法步骤：</p>
+<ul>
+<li>遍历数组，如果遇到递减：<ul>
+<li>还能修改：<ul>
+<li>修改方案1：将nums[i]缩小至nums[i + 1]；</li>
+<li>修改方案2：将nums[i + 1]放大至nums[i]；</li>
+</ul>
+</li>
+<li>不能修改了：直接返回false；</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def checkPossibility(self, nums: List[int]) -> bool:
+        length = len(nums)
+        cnt = 0
+        for i in range(length - 1):
+            if nums[i] > nums[i + 1]:
+                cnt += 1
+                if cnt == 2:
+                    return False
+                if i != 0 and nums[i - 1] > nums[i + 1]:
+                    nums[i + 1] = nums[i] 
+                else:
+                    nums[i] = nums[i + 1]
+        return True
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/description/">leetcode</a></p>
+<p>难度: <code>简单</code></p>
+<p>此简单非彼简单，动态规划就行了。</p>
+<blockquote>
+<p>输入：nums = [-2,1,-3,4,-1,2,1,-5,4]<br>输出：6<br>解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</p>
+</blockquote>
+<h5 id="贪心题解-3"><a href="#贪心题解-3" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>重点在<code>nums[i] += max(nums[i-1], 0)</code><br>要么nums[i] = nums[i] + nums[i-1] 前一项大于0，能让他变大<br>要么nums[i] = nums[i] 前一项不大于0，不能让他变大</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">遍历序号</th>
+<th style="text-align:center">nums</th>
+<th style="text-align:center">res</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">[-2, 1, -3, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">-2</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">[-2, 1, -3, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">[-2, 1, -2, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">[-2, 1, -2, 4, -1, 2, 1, -5, 4]</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 2, 1, -5, 4]</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 1, -5, 4]</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 6, -5, 4]</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 6, 1, 4]</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">[-2, 1, -2, 4, 3, 5, 6, 1, 5]</td>
+<td style="text-align:center">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        res = nums[0]
+        for i in range(1,len(nums)):
+            nums[i] += max(nums[i-1], 0)
+            if nums[i] > res:
+                res = nums[i]
+        return res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="763-划分字母区间"><a href="#763-划分字母区间" class="headerlink" title="763. 划分字母区间"></a>763. 划分字母区间</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/description/">leetcode</a></p>
+<p>难度: <code>中等</code></p>
+<p>有一说一，贪心思想真的绕弯弯！！！</p>
+<blockquote>
+<p>输入：S = “ababcbacadefegdehijhklij”<br>输出：[9,7,8]<br>解释：<br>划分结果为 “ababcbaca”, “defegde”, “hijhklij”。<br>每个字母最多出现在一个片段中。<br>像 “ababcbacadefegde”, “hijhklij” 的划分是错误的，因为划分的片段数较少。</p>
+</blockquote>
+<h5 id="贪心题解-4"><a href="#贪心题解-4" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>具体思路如下：<br>首先呢，用字典记录所有出现字母的<code>出现位置start</code>和<code>消失位置end</code><br>然后呢，把所有的[start, end]组成一个新数组[[start0, end0], [start1, end1], …, [startN, endN]]，不用特意去排序，因为上一步找出来的[start, end]本来就是按start从小到大排序的<br>再后呢，开始遍历了，如果当前节点的start_i落在了前一个节点的[start_i-1, end_i-1]里面，就说明两个点重叠了，一旦发现这个条件不成立，就将<code>end - start + 1</code>加入结果，然后更新start和end。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        hmpend = &#123;&#125;
+        hmpstart = &#123;&#125;
+        for i in range(len(s)):
+            if s[i] not in hmpstart:
+                hmpstart[s[i]] = i
+            hmpend[s[i]] = i
+        dlist = []
+        for k in hmpstart:
+            dlist.append([hmpstart[k],hmpend[k]])
+        # dlist.sort(key=lambda c:(c[0],c[1])) # 其实并不需要排序
+        start = 0
+        end = 0
+        res = []
+        for dl in dlist:
+            if start <= dl[0] and dl[0] <= end:
+                end = max(end, dl[1])
+            else:
+                res.append(end - start + 1)
+                start = dl[0]
+                end = dl[1]
+        res.append(end - start + 1)
+        return res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -631,7 +940,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/">https://shiftrain.github.io/2022/04/01/leetcode/shuang-zhi-zhen/524.tong-guo-shan-chu-zi-mu-pi-pei-dao-zi-dian-li-zui-chang-dan-ci/</a>
+                    <a href="https://shiftrain.github.io/2022/03/27/leetcode/shuang-zhi-zhen/">https://shiftrain.github.io/2022/03/27/leetcode/shuang-zhi-zhen/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -688,7 +997,7 @@
         repo: 'shiftrain.github.io',
         owner: 'shiftrain',
         admin: ["shiftrain"],
-        id: '2022-04-01T10-24-00',
+        id: '2022-03-27T20-52-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -718,13 +1027,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/shuang-zhi-zhen/633.ping-fang-shu-zhi-he/">
+                <a href="/2022/04/01/leetcode/tan-xin-si-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="633. 平方数之和">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="刷爆leetcode：贪心思想">
                         
-                        <span class="card-title">633. 平方数之和</span>
+                        <span class="card-title">刷爆leetcode：贪心思想</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -752,8 +1061,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
+                    <a href="/tags/%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3/">
+                        <span class="chip bg-color">贪心思想</span>
+                    </a>
+                    
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
+                    </a>
+                    
+                    <a href="/tags/BFS/">
+                        <span class="chip bg-color">BFS</span>
                     </a>
                     
                 </div>
@@ -764,16 +1081,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/shuang-zhi-zhen/680.yan-zheng-hui-wen-zi-fu-chuan-ii/">
+                <a href="/2022/03/27/leetcode/shuang-zhi-zhen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="680. 验证回文字符串 Ⅱ">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="刷爆leetcode：双指针">
                         
-                        <span class="card-title">680. 验证回文字符串 Ⅱ</span>
+                        <span class="card-title">刷爆leetcode：双指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -784,7 +1101,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
                             </span>
                         <span class="publish-author">
                             
@@ -798,6 +1115,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -980,7 +1298,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.3k</span>&nbsp;字
+                class="white-color">11.4k</span>&nbsp;字
             
 
             <br>
