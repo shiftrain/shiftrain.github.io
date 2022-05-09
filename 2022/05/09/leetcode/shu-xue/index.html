@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="刷爆leetcode：双指针, ECNU BigData Key-Value Storage shiftrain">
+    <meta name="keywords" content="刷爆leetcode：数学, ECNU BigData Key-Value Storage shiftrain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>刷爆leetcode：双指针 | shiftrain&#39;s blog</title>
+    <title>刷爆leetcode：数学 | shiftrain&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -276,7 +276,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">刷爆leetcode：双指针</h1>
+                    <h1 class="description center-align post-title">刷爆leetcode：数学</h1>
                 </div>
             </div>
         </div>
@@ -392,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                                <span class="chip bg-color">双指针</span>
+                            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">数学</span>
                             </a>
                         
                     </div>
@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-27
+                    2022-05-09
                 </div>
                 
 
@@ -426,14 +426,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    732
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
 
@@ -454,140 +454,84 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="1-双指针-double-pointer"><a href="#1-双指针-double-pointer" class="headerlink" title="1 双指针(double pointer)"></a>1 双指针(double pointer)</h3><p>双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。（over）<br>这部分虽然没有参考cyc的思路，但是由于之前没来及写博客，所以题解思路就参考cyc的了（<a target="_blank" rel="noopener" href="http://www.cyc2018.xyz/%E7%AE%97%E6%B3%95/Leetcode%20%E9%A2%98%E8%A7%A3/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.html#_1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-two-sum">cyc链接</a>）</p>
-<p>当然，可能也会造成思路和代码不符的情况，有空慢慢改！</p>
-<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="1-就普通双指针啊"><a href="#1-就普通双指针啊" class="headerlink" title="1 就普通双指针啊"></a>1 就普通双指针啊</h3><h4 id="167-两数之和-II-输入有序数组"><a href="#167-两数之和-II-输入有序数组" class="headerlink" title="167. 两数之和 II - 输入有序数组"></a>167. 两数之和 II - 输入有序数组</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/">leetcode</a></p>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="1-数学-Math"><a href="#1-数学-Math" class="headerlink" title="1 数学(Math)"></a>1 数学(Math)</h3><h4 id="1-1-基本原理"><a href="#1-1-基本原理" class="headerlink" title="1.1 基本原理"></a>1.1 基本原理</h4><p>说白了就是利用已知的数学知识对题目进行分析和解答.<br><font color=blue>强迫症必须多打两级标题</font></p>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><h3 id="1-素数分解"><a href="#1-素数分解" class="headerlink" title="1 素数分解"></a>1 素数分解</h3><p>每一个数都可以分解成素数的乘积，例如 84 &#x3D; 22 * 31 * 50 * 71 * 110 * 130 * 170 * …</p>
+<h4 id="204-计数质数"><a href="#204-计数质数" class="headerlink" title="204. 计数质数"></a>204. 计数质数</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-primes/description/">leetcode</a></p>
 <p>难度: <code>中等</code></p>
-<p>很多人做这个题目想不到正确的 O(N)解法，即使看了答案理解了，下次再做的时候还是会忘记。要想真正理解这道题，就要明白解法背后的道理。这样不仅可以记住这道题，还能举一反三解决类似的题目。</p>
+<p>数学题，质数？总数？那就用素数筛啦。<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-primes/solution/mei-ju-ai-shi-shai-xian-xing-shai-qi-shu-shai-5xin/">一些素数筛的总结</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100051075">另一些素数筛的总结</a></p>
 <blockquote>
-<p>输入: g &#x3D; [1,2,3], s &#x3D; [1,1]<br>输出: 1<br>解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。<br>虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。<br>所以你应该输出1。</p>
+<p>输入：n &#x3D; 10<br>输出：4<br>解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。</p>
 </blockquote>
-<h5 id="双指针题解"><a href="#双指针题解" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>使用双指针，一个指针指向值较小的元素，一个指针指向值较大的元素。指向较小元素的指针从头向尾遍历，指向较大元素的指针从尾向头遍历。</p>
+<h5 id="数学解法"><a href="#数学解法" class="headerlink" title="数学解法"></a>数学解法</h5><p>网上找了个似乎最好的素数筛，但是结果也只是80%+<br>找了题解中比较靠谱的一个，98%+</p>
+<p>说实话，没怎么看懂，还是背板吧！</p>
 <ul>
-<li>如果两个指针指向元素的和 sum &#x3D;&#x3D; target，那么得到要求的结果；</li>
-<li>如果 sum &gt; target，移动较大的元素，使 sum 变小一些；</li>
-<li>如果 sum &lt; target，移动较小的元素，使 sum 变大一些。</li>
+<li>isPrimeOdd &#x3D; [1] * (n &#x2F;&#x2F; 2)</li>
+<li>range(1, int(n**0.5) &#x2F;&#x2F; 2 + 1)</li>
+<li>isPrimeOdd[i<em>2</em>(i+1):m:2<em>i+1] &#x3D; [0] * ((m+i)&#x2F;&#x2F;(2</em>i+1)-i)</li>
 </ul>
-<p>数组中的元素最多遍历一次，时间复杂度为 O(N)。只使用了两个额外变量，空间复杂度为 O(1)。</p>
-<img src="/2022/03/27/leetcode/shuang-zhi-zhen/1.gif" class="" title="搜索空间">
-
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> numbers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        left <span class="token operator">=</span> <span class="token number">0</span>
-        right <span class="token operator">=</span> len<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token punctuation">:</span>
-            total <span class="token operator">=</span> numbers<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">+</span> numbers<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
-            <span class="token keyword">if</span> total <span class="token operator">></span> target <span class="token punctuation">:</span>
-                right <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> total <span class="token operator">&lt;</span> target<span class="token punctuation">:</span>
-                left <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">else</span> <span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token punctuation">[</span>left<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="633-平方数之和"><a href="#633-平方数之和" class="headerlink" title="633. 平方数之和"></a>633. 平方数之和</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">leetcode</a></p>
-<p>难度: <code>中等</code></p>
-<blockquote>
-<p>输入：c &#x3D; 5<br>输出：true<br>解释：1 * 1 + 2 * 2 &#x3D; 5</p>
-</blockquote>
-<h5 id="贪心题解"><a href="#贪心题解" class="headerlink" title="贪心题解"></a>贪心题解</h5><p>可以看成是在元素为 0~target 的有序数组中查找两个数，使得这两个数的平方和为 target，如果能找到，则返回 true，表示 target 是两个整数的平方和。</p>
-<p>本题和 167 类似，只有一个明显区别：一个是和为 target，一个是平方和为 target。本题同样可以使用双指针得到两个数，使其平方和为 target。</p>
-<p>本题的关键是右指针的初始化，实现剪枝，从而降低时间复杂度。设右指针为 x，左指针固定为 0，为了使 0^2 + x^2 的值尽可能接近 target，我们可以将 x 取为 sqrt(target)。</p>
-<p>因为最多只需要遍历一次 0~sqrt(target)，所以时间复杂度为 O(sqrt(target))。又因为只使用了两个额外的变量，因此空间复杂度为 O(1)。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">judgeSquareSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> c<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
-        left <span class="token operator">=</span> <span class="token number">0</span>
-        right <span class="token operator">=</span> sqrt<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-        <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right <span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
-            total <span class="token operator">=</span> left<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> right<span class="token operator">**</span><span class="token number">2</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> total <span class="token operator">></span> c <span class="token punctuation">:</span>
-                right <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> total <span class="token operator">&lt;</span> c <span class="token punctuation">:</span>
-                left <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">else</span> <span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">True</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="345-反转字符串中的元音字母"><a href="#345-反转字符串中的元音字母" class="headerlink" title="345. 反转字符串中的元音字母"></a>345. 反转字符串中的元音字母</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/description/">leetcode</a></p>
-<p>难度: <code>简单</code></p>
-<img src="/2022/03/27/leetcode/shuang-zhi-zhen/2.png" class="" title="题意">
+    <span class="token keyword">def</span> <span class="token function">countPrimes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            isPrimeOdd <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>n<span class="token operator">**</span><span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> isPrimeOdd<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    isPrimeOdd<span class="token punctuation">[</span>i<span class="token operator">*</span><span class="token number">2</span><span class="token operator">*</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>m<span class="token punctuation">:</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token operator">//</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> sum<span class="token punctuation">(</span>isPrimeOdd<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>另一种使用numpy加速的方法（埃氏筛·优化），注意用np.sum()</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">countPrimes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        primes <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+        primes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> primes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>n <span class="token operator">**</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> primes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                primes<span class="token punctuation">[</span>i <span class="token operator">*</span> i<span class="token punctuation">:</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">return</span> int<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>primes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-整除"><a href="#2-整除" class="headerlink" title="2 整除"></a>2 整除</h3><p>暂无题目。</p>
+<p>令 x &#x3D; 2m0 * 3m1 * 5m2 * 7m3 * 11m4 * …</p>
+<p>令 y &#x3D; 2n0 * 3n1 * 5n2 * 7n3 * 11n4 * …</p>
+<p>如果 x 整除 y（y mod x &#x3D;&#x3D; 0），则对于所有 i，mi &lt;&#x3D; ni。</p>
+<h3 id="3-最大公约数最小公倍数"><a href="#3-最大公约数最小公倍数" class="headerlink" title="3 最大公约数最小公倍数"></a>3 最大公约数最小公倍数</h3><p>x 和 y 的最大公约数为：gcd(x,y) &#x3D; 2min(m0,n0) * 3min(m1,n1) * 5min(m2,n2) * …</p>
+<p>x 和 y 的最小公倍数为：lcm(x,y) &#x3D; 2max(m0,n0) * 3max(m1,n1) * 5max(m2,n2) * …</p>
+<pre class="line-numbers language-python"><code class="language-python">int gcd<span class="token punctuation">(</span>int a<span class="token punctuation">,</span> int b<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token keyword">return</span> b <span class="token operator">==</span> <span class="token number">0</span> ? a <span class="token punctuation">:</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">%</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>最小公倍数为两数的乘积除以最大公约数。</p>
+<pre class="line-numbers language-python"><code class="language-python">int lcm<span class="token punctuation">(</span>int a<span class="token punctuation">,</span> int b<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token keyword">return</span> a <span class="token operator">*</span> b <span class="token operator">/</span> gcd<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="000-使用位操作和减法求解最大公约数"><a href="#000-使用位操作和减法求解最大公约数" class="headerlink" title="000. 使用位操作和减法求解最大公约数"></a>000. 使用位操作和减法求解最大公约数</h4><!-- [leetcode](https://leetcode.cn/problems/count-primes/description/) -->
 
-<blockquote>
-<p>输入：s &#x3D; “hello”<br>输出：”holle”</p>
-</blockquote>
-<h5 id="双指针题解-1"><a href="#双指针题解-1" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>使用双指针，一个指针从头向尾遍历，一个指针从尾到头遍历，当两个指针都遍历到元音字符时，交换这两个元音字符。</p>
-<p>为了快速判断一个字符是不是元音字符，我们将全部元音字符添加到集合 HashSet 中，从而以 O(1) 的时间复杂度进行该操作。</p>
-<ul>
-<li>时间复杂度为 O(N)：只需要遍历所有元素一次</li>
-<li>空间复杂度 O(1)：只需要使用两个额外变量</li>
-</ul>
-<img src="/2022/03/27/leetcode/shuang-zhi-zhen/3.gif" class="" title="题解示意">
-
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">reverseVowels</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> str<span class="token punctuation">:</span>
-        s1 <span class="token operator">=</span> list<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
-        yy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">,</span><span class="token string">'u'</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'E'</span><span class="token punctuation">,</span><span class="token string">'I'</span><span class="token punctuation">,</span><span class="token string">'O'</span><span class="token punctuation">,</span><span class="token string">'U'</span><span class="token punctuation">]</span>
-        left <span class="token operator">=</span> <span class="token number">0</span>
-        right <span class="token operator">=</span> len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token punctuation">:</span>
-            <span class="token keyword">while</span> s1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> yy <span class="token operator">and</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
-                left <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">while</span> s1<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> yy <span class="token operator">and</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
-                right <span class="token operator">-=</span> <span class="token number">1</span>
-            temp <span class="token operator">=</span> s1<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
-            s1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> s1<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
-            s1<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> temp
-            left <span class="token operator">+=</span> <span class="token number">1</span>
-            right <span class="token operator">-=</span> <span class="token number">1</span>
-        <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
+<p>难度: <code>xx</code></p>
+<p>对于 a 和 b 的最大公约数 f(a, b)，有：</p>
+<p>如果 a 和 b 均为偶数，f(a, b) &#x3D; 2*f(a&#x2F;2, b&#x2F;2);<br>如果 a 是偶数 b 是奇数，f(a, b) &#x3D; f(a&#x2F;2, b);<br>如果 b 是偶数 a 是奇数，f(a, b) &#x3D; f(a, b&#x2F;2);<br>如果 a 和 b 均为奇数，f(a, b) &#x3D; f(b, a-b);<br>乘 2 和除 2 都可以转换为移位操作。</p>
+<h5 id="数学解法-1"><a href="#数学解法-1" class="headerlink" title="数学解法"></a>数学解法</h5><pre class="line-numbers language-python"><code class="language-python">public int gcd<span class="token punctuation">(</span>int a<span class="token punctuation">,</span> int b<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;</span> b<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    boolean isAEven <span class="token operator">=</span> isEven<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> isBEven <span class="token operator">=</span> isEven<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isAEven <span class="token operator">&amp;</span><span class="token operator">&amp;</span> isBEven<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token keyword">return</span> <span class="token number">2</span> <span class="token operator">*</span> gcd<span class="token punctuation">(</span>a <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; else if (isAEven &amp;&amp; !isBEven) &amp;#123;</span>
+        <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>a <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; else if (!isAEven &amp;&amp; isBEven) &amp;#123;</span>
+        <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; else &amp;#123;</span>
+        <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="680-验证回文字符串-Ⅱ"><a href="#680-验证回文字符串-Ⅱ" class="headerlink" title="680. 验证回文字符串 Ⅱ"></a>680. 验证回文字符串 Ⅱ</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-palindrome-ii/description/">leetcode</a></p>
-<p>难度: <code>简单</code></p>
-<p>所谓的回文字符串，是指具有左右对称特点的字符串，例如 “abcba” 就是一个回文字符串。</p>
-<p>使用双指针可以很容易判断一个字符串是否是回文字符串：令一个指针从左到右遍历，一个指针从右到左遍历，这两个指针同时移动一个位置，每次都判断两个指针指向的字符是否相同，如果都相同，字符串才是具有左右对称性质的回文字符串。</p>
-<img src="/2022/03/27/leetcode/shuang-zhi-zhen/4.gif" class="" title="题意">
-
-<blockquote>
-<p>输入: s &#x3D; “aba”<br>输出: true</p>
-</blockquote>
-<h5 id="双指针题解-2"><a href="#双指针题解-2" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>本题的关键是处理删除一个字符。在使用双指针遍历字符串时，如果出现两个指针指向的字符不相等的情况，我们就试着删除一个字符，再判断删除完之后的字符串是否是回文字符串。</p>
-<p>在判断是否为回文字符串时，我们不需要判断整个字符串，因为左指针左边和右指针右边的字符之前已经判断过具有对称性质，所以只需要判断中间的子字符串即可。</p>
-<p>在试着删除字符时，我们既可以删除左指针指向的字符，也可以删除右指针指向的字符。</p>
-<img src="/2022/03/27/leetcode/shuang-zhi-zhen/5.gif" class="" title="题解示意">
-
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">validPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
-        l<span class="token operator">=</span><span class="token number">0</span>
-        r<span class="token operator">=</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">if</span> s <span class="token operator">==</span> s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">True</span>
-        <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> s<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">==</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                l<span class="token operator">+=</span><span class="token number">1</span>
-                r<span class="token operator">-=</span><span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> s<span class="token punctuation">[</span>l<span class="token punctuation">:</span>r<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>l<span class="token punctuation">:</span>r<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">or</span> s<span class="token punctuation">[</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="524-通过删除字母匹配到字典里最长单词"><a href="#524-通过删除字母匹配到字典里最长单词" class="headerlink" title="524. 通过删除字母匹配到字典里最长单词"></a>524. 通过删除字母匹配到字典里最长单词</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/description/">leetcode</a></p>
-<p>难度: <code>中等</code></p>
-<p>删除 s 中的一些字符，使得它构成字符串列表 d 中的一个字符串，找出能构成的最长字符串。如果有多个相同长度的结果，返回字典序的最小字符串。</p>
-<blockquote>
-<p>输入：s &#x3D; “abpcplea”, dictionary &#x3D; [“ale”,”apple”,”monkey”,”plea”]<br>输出：”apple”</p>
-</blockquote>
-<h5 id="双指针题解-3"><a href="#双指针题解-3" class="headerlink" title="双指针题解"></a>双指针题解</h5><p>通过删除字符串 s 中的一个字符能得到字符串 t，可以认为 t 是 s 的子序列，我们可以使用双指针来判断一个字符串是否为另一个字符串的子序列。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxProfit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prices<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        res <span class="token operator">=</span> <span class="token number">0</span>
-        tmp <span class="token operator">=</span> prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> p <span class="token keyword">in</span> prices<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> p <span class="token operator">></span> tmp<span class="token punctuation">:</span>
-                res <span class="token operator">+=</span> p <span class="token operator">-</span> tmp
-            tmp <span class="token operator">=</span> p
-        <span class="token keyword">return</span> res
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -599,8 +543,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                                    <span class="chip bg-color">双指针</span>
+                                <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">数学</span>
                                 </a>
                             
                         </div>
@@ -769,7 +713,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shiftrain.github.io/2022/03/27/leetcode/shuang-zhi-zhen/">https://shiftrain.github.io/2022/03/27/leetcode/shuang-zhi-zhen/</a>
+                    <a href="https://shiftrain.github.io/2022/05/09/leetcode/shu-xue/">https://shiftrain.github.io/2022/05/09/leetcode/shu-xue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -826,7 +770,7 @@
         repo: 'shiftrain.github.io',
         owner: 'shiftrain',
         admin: ["shiftrain"],
-        id: '2022-03-27T20-52-01',
+        id: '2022-05-09T20-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -852,74 +796,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/01/leetcode/tan-xin-si-xiang/">
+                <a href="/2022/05/09/leetcode/shu-xue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="刷爆leetcode：贪心思想">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="刷爆leetcode：数学">
                         
-                        <span class="card-title">刷爆leetcode：贪心思想</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3/">
-                        <span class="chip bg-color">贪心思想</span>
-                    </a>
-                    
-                    <a href="/tags/DFS/">
-                        <span class="chip bg-color">DFS</span>
-                    </a>
-                    
-                    <a href="/tags/BFS/">
-                        <span class="chip bg-color">BFS</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/27/leetcode/shuang-zhi-zhen/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="刷爆leetcode：双指针">
-                        
-                        <span class="card-title">刷爆leetcode：双指针</span>
+                        <span class="card-title">刷爆leetcode：数学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -930,7 +818,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
                             </span>
                         <span class="publish-author">
                             
@@ -948,8 +836,57 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/17/leetcode/dong-tai-gui-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="刷爆leetcode：动态规划">
+                        
+                        <span class="card-title">刷爆leetcode：动态规划</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/leetcode/" class="post-category">
+                                    leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
