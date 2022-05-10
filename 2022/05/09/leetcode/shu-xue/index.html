@@ -426,7 +426,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    732
+                    729
                 </div>
                 
 
@@ -499,15 +499,16 @@
 <p>如果 x 整除 y（y mod x &#x3D;&#x3D; 0），则对于所有 i，mi &lt;&#x3D; ni。</p>
 <h3 id="3-最大公约数最小公倍数"><a href="#3-最大公约数最小公倍数" class="headerlink" title="3 最大公约数最小公倍数"></a>3 最大公约数最小公倍数</h3><p>x 和 y 的最大公约数为：gcd(x,y) &#x3D; 2min(m0,n0) * 3min(m1,n1) * 5min(m2,n2) * …</p>
 <p>x 和 y 的最小公倍数为：lcm(x,y) &#x3D; 2max(m0,n0) * 3max(m1,n1) * 5max(m2,n2) * …</p>
-<pre class="line-numbers language-python"><code class="language-python">int gcd<span class="token punctuation">(</span>int a<span class="token punctuation">,</span> int b<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token keyword">return</span> b <span class="token operator">==</span> <span class="token number">0</span> ? a <span class="token punctuation">:</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">%</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gcd</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> int<span class="token punctuation">,</span> b<span class="token punctuation">:</span>int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> a
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">%</span> b<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>最小公倍数为两数的乘积除以最大公约数。</p>
-<pre class="line-numbers language-python"><code class="language-python">int lcm<span class="token punctuation">(</span>int a<span class="token punctuation">,</span> int b<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token keyword">return</span> a <span class="token operator">*</span> b <span class="token operator">/</span> gcd<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">lcm</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> int<span class="token punctuation">,</span> b<span class="token punctuation">:</span>int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> a <span class="token operator">*</span> b <span class="token operator">//</span> gcd<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="000-使用位操作和减法求解最大公约数"><a href="#000-使用位操作和减法求解最大公约数" class="headerlink" title="000. 使用位操作和减法求解最大公约数"></a>000. 使用位操作和减法求解最大公约数</h4><!-- [leetcode](https://leetcode.cn/problems/count-primes/description/) -->
 
 <p>难度: <code>xx</code></p>
@@ -532,6 +533,7 @@
     <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>？？？</p>
 
                 
             </div>
